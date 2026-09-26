@@ -11,7 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 		if Globals.current_state == Globals.States.NIGHT:
 			print("loot grabbed")
 			reparent.call_deferred(body)
-			set_deferred("position",Vector2(0,-40))
+			set_deferred("position",Vector2(0,-25))
 			collision_shape_2d.set_deferred("disabled",true)
 		
 		
