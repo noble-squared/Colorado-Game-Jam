@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dqvg4cex7qfxk"]
+
+[ext_resource type="Theme" uid="uid://c0s2fsegqevro" path="res://assets/themes/game_over_theme.tres" id="1_jb6in"]
+[ext_resource type="Script" uid="uid://evm8bmkr0ct" path="res://Scripts/game_over_screen.gd" id="2_y8man"]
+
+[node name="GameOverScreen" type="Control" unique_id=962941326]
+process_mode = 3
+z_index = 1000
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jb6in")
+script = ExtResource("2_y8man")
+
+[node name="Panel" type="ColorRect" parent="." unique_id=399758809]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.23137255)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=32121239]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -125.0
+offset_top = -48.5
+offset_right = 125.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=806543367]
+layout_mode = 2
+text = "You were caught!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2043742029]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 12
+
+[node name="RestartButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1670583303]
+layout_mode = 2
+text = "Restart"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1759648133]
+layout_mode = 2
+text = "Menu"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]

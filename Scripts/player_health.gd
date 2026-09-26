@@ -14,4 +14,5 @@ func _process(delta: float) -> void:
 		if (spottedTime <= maxGracePeriod):
 			spottedTime += delta
 		else:
-			push_error("SPOTTED")
+			# TODO Maybe change this to be better
+			characterBody.get_parent().find_child("GameOverLayer").find_child("GameOverScreen").gameOver()
