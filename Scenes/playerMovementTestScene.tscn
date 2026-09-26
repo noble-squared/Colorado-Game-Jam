@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://r866lubpiqq5"]
 
 [ext_resource type="PackedScene" uid="uid://be36otywe3wge" path="res://Scenes/player.tscn" id="1_j5q4e"]
+[ext_resource type="PackedScene" uid="uid://5xetlc2tbsu8" path="res://Scenes/spotlight.tscn" id="2_6eqyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j5q4e"]
 size = Vector2(1000, 29)
@@ -11,6 +12,12 @@ size = Vector2(1000, 29)
 gradient = SubResource("Gradient_mdmak")
 width = 1000
 height = 1000
+
+[sub_resource type="Curve2D" id="Curve2D_j5q4e"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, -12, 0, 0, 0, 0, 134, -54, 0, 0, 0, 0, 155, -102, 0, 0, 0, 0, 76, -156, 0, 0, 0, 0, -29, -112, 0, 0, 0, 0, -92, -146, 0, 0, 0, 0, -154, -101, 0, 0, 0, 0, -115, -25, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
 
 [node name="PlayerMovementTestScene" type="Node2D" unique_id=1336154490]
 
@@ -24,4 +31,15 @@ shape = SubResource("RectangleShape2D_j5q4e")
 texture = SubResource("GradientTexture2D_dysls")
 
 [node name="Player" parent="." unique_id=1588156878 instance=ExtResource("1_j5q4e")]
-position = Vector2(38, -81)
+position = Vector2(-115, -92)
+
+[node name="Path2D" type="Path2D" parent="." unique_id=296940793]
+position = Vector2(300, 0)
+curve = SubResource("Curve2D_j5q4e")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=570635999]
+rotation = -0.18534794
+
+[node name="Spotlight" parent="." unique_id=1108454828 node_paths=PackedStringArray("targetPathPos") instance=ExtResource("2_6eqyl")]
+position = Vector2(316, -189)
+targetPathPos = NodePath("../Path2D/PathFollow2D")
