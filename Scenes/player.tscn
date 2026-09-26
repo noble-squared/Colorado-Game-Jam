@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://be36otywe3wge"]
+[gd_scene format=3 uid="uid://dm4ghbmkfq828"]
 
-[ext_resource type="Script" uid="uid://bbq15863u5joj" path="res://Scripts/player_movement.gd" id="1_v0iea"]
-[ext_resource type="Script" uid="uid://dpfiwrapv15km" path="res://Scripts/player_health.gd" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://c7f705g8y4nw2" path="res://Scripts/player_movement.gd" id="1_v0iea"]
+[ext_resource type="Script" path="res://Scripts/player_health.gd" id="2_cvnsp"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cvnsp"]
 size = Vector2(32, 32)
@@ -24,3 +24,4 @@ script = ExtResource("2_cvnsp")
 shape = SubResource("CircleShape2D_6t5aa")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=857247410]
+zoom = Vector2(3, 3)
