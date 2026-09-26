@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://djlm2lpjevixc"]
+
+[ext_resource type="Script" uid="uid://bjdykkxubwt17" path="res://Scripts/guard.gd" id="1_p570l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g5w7"]
+
+[node name="Guard" type="Area2D" unique_id=1314558136]
+script = ExtResource("1_p570l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1667752561]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_5g5w7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=262859064]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

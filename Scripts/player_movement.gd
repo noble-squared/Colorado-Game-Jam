@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if (Input.is_action_just_pressed("Jump") && jumpsInARow < maxJumpsInARow): # Jumping
 		characterBody.velocity.y -= jumpImpuplse
 		jumpsInARow += 1
-		print(jumpsInARow)
+		#print(jumpsInARow)
 	elif (jumpsInARow != 0 && characterBody.is_on_floor()):
 		jumpsInARow = 0
 	
