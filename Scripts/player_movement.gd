@@ -4,7 +4,7 @@ var characterBody: CharacterBody2D
 
 @export var baseWalkSpeed: float = 300
 @export var inertia: float = 0.7 ## [0-1): 0 is no inertia and 1 is no change
-@export var jumpImpuplse: float = 300
+@export var jumpImpuplse: float = 400
 var jumpsInARow: int = 0
 @export var maxJumpsInARow: int = 2
 

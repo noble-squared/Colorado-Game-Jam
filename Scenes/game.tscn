@@ -1,6 +1,36 @@
 [gd_scene format=3 uid="uid://cyyjkuankb6b1"]
 
 [ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://x6bo71sn0vlp" path="res://Scenes/platform.tscn" id="2_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_wrm1d"]
+[ext_resource type="Script" uid="uid://dyuim0yp6cee7" path="res://Scripts/label.gd" id="4_3dryh"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3dryh"]
+distance = -70.0
 
 [node name="Game" type="Node2D" unique_id=1873807053]
 script = ExtResource("1_ebmjs")
+
+[node name="Platform2" parent="." unique_id=1274608817 instance=ExtResource("2_qxrlw")]
+position = Vector2(87, 56)
+
+[node name="Platform" parent="." unique_id=896764623 instance=ExtResource("2_qxrlw")]
+position = Vector2(89, -10)
+type = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1941367286]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1251072494]
+shape = SubResource("WorldBoundaryShape2D_3dryh")
+
+[node name="Player" parent="." unique_id=1588156878 instance=ExtResource("3_wrm1d")]
+
+[node name="Label" type="Label" parent="Player" unique_id=1912605045]
+offset_left = -538.0
+offset_top = -301.0
+offset_right = -345.0
+offset_bottom = -204.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 36
+script = ExtResource("4_3dryh")

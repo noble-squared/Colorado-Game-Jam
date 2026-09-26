@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://x6bo71sn0vlp"]
+
+[ext_resource type="Script" uid="uid://cwwx0j8n5xsbx" path="res://Scripts/platform.gd" id="1_kheec"]
+[ext_resource type="Texture2D" uid="uid://b6w258bk20do5" path="res://assets/art/object_tiles.png" id="2_n5262"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcowf"]
+size = Vector2(34, 6)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrs20"]
+texture = ExtResource("2_n5262")
+0:2/size_in_atlas = Vector2i(2, 2)
+0:2/0 = 0
+2:2/size_in_atlas = Vector2i(2, 2)
+2:2/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mlqre"]
+sources/2 = SubResource("TileSetAtlasSource_mrs20")
+
+[node name="Platform" type="Node2D" unique_id=1274608817]
+script = ExtResource("1_kheec")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=398132486]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1906567195]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_wcowf")
+
+[node name="NightLayer" type="TileMapLayer" parent="AnimatableBody2D" unique_id=412382431]
+visible = false
+position = Vector2(-6.4373016e-06, -4.7683716e-07)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 2, 0, 0, 0, 0, 0, 0, 16)
+tile_set = SubResource("TileSet_mlqre")
+
+[node name="DayLayer" type="TileMapLayer" parent="AnimatableBody2D" unique_id=291136777]
+visible = false
+position = Vector2(-6.4373016e-06, -4.7683716e-07)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 1, 0, 0, 0, 0, 16, 0, 0, 255, 255, 2, 0, 1, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_mlqre")
+
+[node name="DisabledLayer" type="TileMapLayer" parent="AnimatableBody2D" unique_id=452443945]
+visible = false
+position = Vector2(-6.4373016e-06, -4.7683716e-07)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 2, 0, 1, 0, 0, 16, 0, 0, 255, 255, 2, 0, 2, 0, 1, 0, 0, 0)
+tile_set = SubResource("TileSet_mlqre")
