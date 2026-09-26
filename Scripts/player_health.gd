@@ -11,7 +11,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if (isSpotted):
-		print("SPOTTED!!!: " + str(spottedTime))
 		if (spottedTime <= maxGracePeriod):
 			spottedTime += delta
 		else:
