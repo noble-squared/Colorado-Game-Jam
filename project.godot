@@ -13,6 +13,10 @@ config_version=5
 config/name="Colorado Game Jam 2026"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
+[autoload]
+
+Globals="*uid://dtyucqdk3m6i4"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
