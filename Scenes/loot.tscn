@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ccvvan32cvlwb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqmmn"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gg2i2"]
+
+[node name="Loot" type="StaticBody2D" unique_id=445002194]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=162332439]
+shape = SubResource("CircleShape2D_dqmmn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1711673363]
+position = Vector2(4.7683716e-07, 0.5)
+scale = Vector2(16.000002, 15)
+texture = SubResource("CanvasTexture_gg2i2")
