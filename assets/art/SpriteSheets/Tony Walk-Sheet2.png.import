@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgv1y3y64n2kn"
-path="res://.godot/imported/Tony-Sheet-Sheet.png-d7a2686bf6aacc8caa306c5b40f5bf9d.ctex"
+uid="uid://cxxwep6hjmhp8"
+path="res://.godot/imported/Tony Walk-Sheet2.png-84c4345c29138e92912158d93b09ac2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Tony-Sheet-Sheet.png"
-dest_files=["res://.godot/imported/Tony-Sheet-Sheet.png-d7a2686bf6aacc8caa306c5b40f5bf9d.ctex"]
+source_file="res://assets/art/SpriteSheets/Tony Walk-Sheet2.png"
+dest_files=["res://.godot/imported/Tony Walk-Sheet2.png-84c4345c29138e92912158d93b09ac2f.ctex"]
 
 [params]
 

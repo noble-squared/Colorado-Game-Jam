@@ -1,14 +1,58 @@
 [gd_scene format=3 uid="uid://be36otywe3wge"]
 
+<<<<<<< Updated upstream
 [ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_v0iea"]
 [ext_resource type="Script" path="res://Scripts/player_health.gd" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dgv1y3y64n2kn" path="res://assets/art/Tony-Sheet-Sheet.png" id="3_6t5aa"]
+=======
+[ext_resource type="Script" uid="uid://bbq15863u5joj" path="res://Scripts/player_movement.gd" id="1_v0iea"]
+[ext_resource type="Script" uid="uid://dpfiwrapv15km" path="res://Scripts/player_health.gd" id="2_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://dgv1y3y64n2kn" path="res://assets/art/SpriteSheets/Tony-Sheet-Sheet.png" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://dgaeujte4p43q" path="res://assets/art/SpriteSheets/Tony Jump.png" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://cxxwep6hjmhp8" path="res://assets/art/SpriteSheets/Tony Walk-Sheet2.png" id="4_x3wgy"]
+>>>>>>> Stashed changes
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_cvnsp"]
 size = Vector2(32, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
 radius = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
+atlas = ExtResource("3_fkybt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs7ks"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
+atlas = ExtResource("4_x3wgy")
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
 atlas = ExtResource("3_6t5aa")
@@ -44,6 +88,43 @@ region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pu2lt"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu2lt")
+}],
+"loop": true,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukyrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dp3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4iuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd4e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqcod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs7ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6n3p")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 10.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vgqql")
@@ -92,5 +173,9 @@ shape = SubResource("CircleShape2D_6t5aa")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590847572]
 sprite_frames = SubResource("SpriteFrames_pu2lt")
+animation = &"Jump"
 autoplay = "default"
+<<<<<<< Updated upstream
 frame_progress = 0.09056044
+=======
+>>>>>>> Stashed changes
