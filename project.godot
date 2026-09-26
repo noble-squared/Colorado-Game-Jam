@@ -10,9 +10,8 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Colorado Game Jam 2026"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [physics]
 
