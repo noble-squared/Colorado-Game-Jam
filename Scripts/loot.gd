@@ -2,14 +2,18 @@ extends Area2D
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
+
 func _ready():
 	Globals.connect("DaySwapped", _on_day_swapped)
+
+
 
 func _on_body_entered(body: Node2D) -> void:
 	
 	if body.is_in_group("Player"):
 		if Globals.current_state == Globals.States.NIGHT:
-			print("loot grabbed")
+			#print("loot grabbed")
+			body.set_meta("has_loot", true)
 			reparent.call_deferred(body)
 			set_deferred("position",Vector2(0,-25))
 			collision_shape_2d.set_deferred("disabled",true)
@@ -17,6 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 		
 		
 func _on_day_swapped():
+	get_tree().get_first_node_in_group("Player").set_meta("has_loot", false)
 	var new_position = global_position
 	reparent(get_tree().root)
 	global_position = new_position
