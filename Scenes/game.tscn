@@ -2,19 +2,11 @@
 
 [ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://x6bo71sn0vlp" path="res://Scenes/platform.tscn" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_wrm1d"]
-[ext_resource type="Script" path="res://Scripts/label.gd" id="4_3dryh"]
-[ext_resource type="PackedScene" uid="uid://5xetlc2tbsu8" path="res://Scenes/spotlight.tscn" id="5_wowpa"]
-[ext_resource type="PackedScene" uid="uid://dqvg4cex7qfxk" path="res://Scenes/game_over_screen.tscn" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://be36otywe3wge" path="res://Scenes/player.tscn" id="3_wrm1d"]
+[ext_resource type="Script" uid="uid://dyuim0yp6cee7" path="res://Scripts/label.gd" id="4_3dryh"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3dryh"]
 distance = -70.0
-
-[sub_resource type="Curve2D" id="Curve2D_i6g32"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, -12, 0, 0, 0, 0, 134, -54, 0, 0, 0, 0, 155, -102, 0, 0, 0, 0, 76, -156, 0, 0, 0, 0, -29, -112, 0, 0, 0, 0, -92, -146, 0, 0, 0, 0, -154, -101, 0, 0, 0, 0, -115, -25, 0, 0, 0, 0, 0, 0)
-}
-point_count = 10
 
 [node name="Game" type="Node2D" unique_id=1873807053]
 script = ExtResource("1_ebmjs")
@@ -33,6 +25,9 @@ shape = SubResource("WorldBoundaryShape2D_3dryh")
 
 [node name="Player" parent="." unique_id=1588156878 instance=ExtResource("3_wrm1d")]
 
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1826816771]
+position = Vector2(0, 1)
+
 [node name="Label" type="Label" parent="Player" unique_id=1912605045]
 offset_left = -538.0
 offset_top = -301.0
@@ -42,18 +37,3 @@ size_flags_horizontal = 3
 size_flags_vertical = 6
 theme_override_font_sizes/font_size = 36
 script = ExtResource("4_3dryh")
-
-[node name="Path2D" type="Path2D" parent="." unique_id=1339818046]
-position = Vector2(-300, 50)
-curve = SubResource("Curve2D_i6g32")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=264120762]
-rotation = -0.18534794
-
-[node name="Spotlight" parent="." unique_id=1108454828 node_paths=PackedStringArray("targetPathPos") instance=ExtResource("5_wowpa")]
-position = Vector2(316, -189)
-targetPathPos = NodePath("../Path2D/PathFollow2D")
-
-[node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=771477983]
-
-[node name="GameOverScreen" parent="GameOverLayer" unique_id=962941326 instance=ExtResource("6_i6g32")]
