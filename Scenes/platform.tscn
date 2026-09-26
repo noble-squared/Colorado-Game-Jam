@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://x6bo71sn0vlp"]
+
+[ext_resource type="Script" uid="uid://cwwx0j8n5xsbx" path="res://Scripts/platform.gd" id="1_kheec"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g3863"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcowf"]
+size = Vector2(135, 20)
+
+[node name="Platform" type="Node2D" unique_id=1274608817]
+script = ExtResource("1_kheec")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=398132486]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=487909544]
+position = Vector2(-6.4373016e-06, -4.7683716e-07)
+scale = Vector2(135.99998, 20)
+texture = SubResource("CanvasTexture_g3863")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1906567195]
+shape = SubResource("RectangleShape2D_wcowf")
