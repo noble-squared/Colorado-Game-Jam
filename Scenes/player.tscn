@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://be36otywe3wge"]
+[gd_scene format=3 uid="uid://dm4ghbmkfq828"]
 
 [ext_resource type="Script" uid="uid://bbq15863u5joj" path="res://Scripts/player_movement.gd" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://dpfiwrapv15km" path="res://Scripts/player_health.gd" id="2_cvnsp"]
@@ -89,6 +89,7 @@ script = ExtResource("2_cvnsp")
 shape = SubResource("CircleShape2D_6t5aa")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=857247410]
+zoom = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590847572]
 sprite_frames = SubResource("SpriteFrames_pu2lt")
