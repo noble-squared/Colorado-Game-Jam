@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j358xx13f52c"
-path="res://.godot/imported/Spotlight.png-d0b620e45ec34afd5c6f69aa6df3d81e.ctex"
+uid="uid://diu8cw4c4vwaj"
+path="res://.godot/imported/Tony Walk-Sheet2.png-ae57e083d9b25cdc4563071202e1a3e2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Spotlight.png"
-dest_files=["res://.godot/imported/Spotlight.png-d0b620e45ec34afd5c6f69aa6df3d81e.ctex"]
+source_file="res://assets/art/Tony Walk-Sheet2.png"
+dest_files=["res://.godot/imported/Tony Walk-Sheet2.png-ae57e083d9b25cdc4563071202e1a3e2.ctex"]
 
 [params]
 

@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< Updated upstream:assets/art/Spotlight.png.import
-uid="uid://br1386iacvy1v"
-path="res://.godot/imported/Spotlight.png-d0b620e45ec34afd5c6f69aa6df3d81e.ctex"
-========
-uid="uid://crjv2fofygel8"
+uid="uid://bpoj5r6pgovs0"
 path="res://.godot/imported/Diamonds.png-3b8f381455d5c4553baaad0b2cc09be7.ctex"
->>>>>>>> Stashed changes:assets/art/Diamonds.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< Updated upstream:assets/art/Spotlight.png.import
-source_file="res://assets/art/Spotlight.png"
-dest_files=["res://.godot/imported/Spotlight.png-d0b620e45ec34afd5c6f69aa6df3d81e.ctex"]
-========
 source_file="res://assets/art/Diamonds.png"
 dest_files=["res://.godot/imported/Diamonds.png-3b8f381455d5c4553baaad0b2cc09be7.ctex"]
->>>>>>>> Stashed changes:assets/art/Diamonds.png.import
 
 [params]
 

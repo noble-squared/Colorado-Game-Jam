@@ -1,7 +1,11 @@
 extends Node2D
 
 var characterBody: CharacterBody2D
+<<<<<<< Updated upstream
 @onready var animatedSprite: AnimatedSprite2D = $"../AnimatedSprite2D"
+=======
+@onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
+>>>>>>> Stashed changes
 @export var baseWalkSpeed: float = 300
 @export var inertia: float = 0.7 ## [0-1): 0 is no inertia and 1 is no change
 @export var jumpImpuplse: float = 300
@@ -24,20 +28,19 @@ func _physics_process(delta: float) -> void:
 		print(jumpsInARow)
 	elif (jumpsInARow != 0 && characterBody.is_on_floor()):
 		jumpsInARow = 0
-	if(horizontalDelta <0):
-		animatedSprite.flip_h = true
-	else:
-			animatedSprite.flip_h = false
+
+	if(horizontalDelta >0):
+		animated_sprite_2d.flip_h = false
+	elif(horizontalDelta <0):
+		animated_sprite_2d.flip_h = true
 	if(characterBody.is_on_floor()):
-		if(horizontalDelta <0):		
-			animatedSprite.play("Walk")
-		elif(horizontalDelta >0):
-			animatedSprite.play("Walk")
+		if(horizontalDelta != 0):
+			animated_sprite_2d.play("Walk")
 		else:
-			animatedSprite.play("default")
+			animated_sprite_2d.play("default")
 	else:
-		animatedSprite.play("Jump")
-	
+		animated_sprite_2d.play("Jump")	
+
 	characterBody.move_and_slide() # Move and slide
 	
 	
