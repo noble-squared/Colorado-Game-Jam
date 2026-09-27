@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7gpea0r8di5t"
-path="res://.godot/imported/Tony Jump.png-38a2e53c98bf77ad7df9b9aecc1a510e.ctex"
+uid="uid://dywk5p5vdgiv1"
+path="res://.godot/imported/Guard-Sheet.png-d8504fc25b8753d8bc5572b07d8dea1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Tony Jump.png"
-dest_files=["res://.godot/imported/Tony Jump.png-38a2e53c98bf77ad7df9b9aecc1a510e.ctex"]
+source_file="res://assets/art/Sprite Sheets/Guard-Sheet.png"
+dest_files=["res://.godot/imported/Guard-Sheet.png-d8504fc25b8753d8bc5572b07d8dea1e.ctex"]
 
 [params]
 

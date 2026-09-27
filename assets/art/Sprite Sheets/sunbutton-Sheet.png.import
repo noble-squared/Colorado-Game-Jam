@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw1so771k7sr3"
-path="res://.godot/imported/Tony Walk-Sheet2.png-ae57e083d9b25cdc4563071202e1a3e2.ctex"
+uid="uid://p8alxb2ikaii"
+path="res://.godot/imported/sunbutton-Sheet.png-239abe1e76181cc1b1d80ce2ca7ff30c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Tony Walk-Sheet2.png"
-dest_files=["res://.godot/imported/Tony Walk-Sheet2.png-ae57e083d9b25cdc4563071202e1a3e2.ctex"]
+source_file="res://assets/art/Sprite Sheets/sunbutton-Sheet.png"
+dest_files=["res://.godot/imported/sunbutton-Sheet.png-239abe1e76181cc1b1d80ce2ca7ff30c.ctex"]
 
 [params]
 

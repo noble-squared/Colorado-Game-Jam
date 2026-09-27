@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bfebdm5v7nnsc"]
+
+[ext_resource type="Script" uid="uid://7ka3t2eeak48" path="res://scripts/restart_level_button.gd" id="1_pqtnl"]
+
+[node name="RestartLevelButton" type="Button" unique_id=472408553]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Restart Level"
+script = ExtResource("1_pqtnl")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

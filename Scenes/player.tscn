@@ -2,9 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bbq15863u5joj" path="res://Scripts/player_movement.gd" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://dpfiwrapv15km" path="res://Scripts/player_health.gd" id="2_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://dgv1y3y64n2kn" path="res://assets/art/Tony-Sheet-Sheet.png" id="3_6t5aa"]
-[ext_resource type="Texture2D" uid="uid://c7gpea0r8di5t" path="res://assets/art/Tony Jump.png" id="3_fkybt"]
-[ext_resource type="Texture2D" uid="uid://bw1so771k7sr3" path="res://assets/art/Tony Walk-Sheet2.png" id="4_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://dgv1y3y64n2kn" path="res://assets/art/Sprite Sheets/Tony-Sheet-Sheet.png" id="3_6t5aa"]
+[ext_resource type="Texture2D" uid="uid://c7gpea0r8di5t" path="res://assets/art/Sprite Sheets/Tony Jump.png" id="3_fkybt"]
+[ext_resource type="Texture2D" uid="uid://bw1so771k7sr3" path="res://assets/art/Sprite Sheets/Tony Walk-Sheet2.png" id="4_x3wgy"]
+[ext_resource type="PackedScene" uid="uid://dqvg4cex7qfxk" path="res://Scenes/playerUI/game_over_screen.tscn" id="7_f1ek2"]
+[ext_resource type="PackedScene" uid="uid://cmtdskuc63a1r" path="res://Scenes/playerUI/pause_menu.tscn" id="8_tx1dd"]
+[ext_resource type="PackedScene" uid="uid://dt5u0rcl15igd" path="res://Scenes/playerUI/win_screen.tscn" id="9_gymyn"]
 
 [sub_resource type="Curve" id="Curve_6t5aa"]
 _data = [Vector2(0, 0.31622303), 0.0, 0.0023689577, 0, 0, Vector2(0.5099503, 0.52492607), 0.7065144, 0.7065144, 0, 0, Vector2(1, 1), 1.1039288, 0.0, 0, 0]
@@ -170,3 +173,15 @@ animation = &"Walk"
 autoplay = "default"
 frame = 4
 frame_progress = 0.85994726
+
+[node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=541839562]
+
+[node name="GameOverScreen" parent="GameOverLayer" unique_id=962941326 instance=ExtResource("7_f1ek2")]
+
+[node name="PauseLayer" type="CanvasLayer" parent="." unique_id=2123868103]
+
+[node name="PauseMenu" parent="PauseLayer" unique_id=1805321888 instance=ExtResource("8_tx1dd")]
+
+[node name="WinLayer" type="CanvasLayer" parent="." unique_id=2146947554]
+
+[node name="WinScreen" parent="WinLayer" unique_id=1889581568 instance=ExtResource("9_gymyn")]
