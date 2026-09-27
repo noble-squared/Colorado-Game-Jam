@@ -77,7 +77,7 @@ func _physics_process(delta: float) -> void:
 		elif(horizontalDelta >0):
 			animated_sprite_2d.play("Walk")
 	elif(characterBody.is_on_wall_only()):
-		animated_sprite_2d.play("WallSlide")
+		animated_sprite_2d.play("Wall Slide")
 		
 	else:
 		animated_sprite_2d.play("Jump")
