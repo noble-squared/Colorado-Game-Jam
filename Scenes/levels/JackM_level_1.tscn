@@ -1,0 +1,145 @@
+[gd_scene format=4 uid="uid://c8beuyxrrswkn"]
+
+[ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_woo7q"]
+[ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="2_adum2"]
+[ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_ch732"]
+[ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_4c1wq"]
+[ext_resource type="PackedScene" uid="uid://dol0a51giqtfq" path="res://Scenes/getaway_truck.tscn" id="5_253b1"]
+[ext_resource type="PackedScene" uid="uid://btbyejebdjwdy" path="res://Scenes/street_light.tscn" id="6_ec1r3"]
+[ext_resource type="PackedScene" uid="uid://x6bo71sn0vlp" path="res://Scenes/platform.tscn" id="7_mvss5"]
+[ext_resource type="PackedScene" uid="uid://djlm2lpjevixc" path="res://Scenes/guard.tscn" id="8_klt6r"]
+[ext_resource type="PackedScene" uid="uid://5xetlc2tbsu8" path="res://Scenes/spotlight.tscn" id="9_6wku1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e657c"]
+texture = ExtResource("2_adum2")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:4/size_in_atlas = Vector2i(3, 3)
+1:4/0 = 0
+4:4/size_in_atlas = Vector2i(3, 3)
+4:4/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wcvos"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_e657c")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yuro2"]
+normal = Vector2(1, 0)
+
+[sub_resource type="Curve2D" id="Curve2D_ljbgv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 120, 16, 0, 0, 0, 0, 264, 16)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_e657c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 256, -128, 0, 0, 0, 0, 256, -194, 0, 0, 0, 0, 416, -194, 0, 0, 0, 0, 416, -128, 0, 0, 0, 0, 256, -128)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_woo7q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 440.665, -208, 0, 0, 0, 0, 591.665, -202, 0, 0, 0, 0, 595.665, -225, 0, 0, 0, 0, 441.665, -225, 0, 0, 0, 0, 440.665, -208)
+}
+point_count = 5
+
+[node name="Game" type="Node2D" unique_id=333900588]
+script = ExtResource("1_woo7q")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=297308668]
+tile_map_data = PackedByteArray("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")
+tile_set = SubResource("TileSet_wcvos")
+
+[node name="Player" parent="." unique_id=1588156878 instance=ExtResource("3_ch732")]
+position = Vector2(-24, -0.99999994)
+
+[node name="Loot" parent="." unique_id=213962639 instance=ExtResource("4_4c1wq")]
+position = Vector2(392, -6)
+scale = Vector2(0.515, 0.515)
+
+[node name="GetawayTruck" parent="." unique_id=868867607 instance=ExtResource("5_253b1")]
+position = Vector2(-97, -12)
+
+[node name="LeftWorldBoundary" type="StaticBody2D" parent="." unique_id=1035242529]
+position = Vector2(-145, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWorldBoundary" unique_id=414763792]
+shape = SubResource("WorldBoundaryShape2D_yuro2")
+
+[node name="StreetLight" parent="." unique_id=1535873461 instance=ExtResource("6_ec1r3")]
+position = Vector2(56, -8)
+
+[node name="Node" type="Node" parent="." unique_id=1027847893]
+
+[node name="Platform" parent="Node" unique_id=1274608817 instance=ExtResource("7_mvss5")]
+position = Vector2(387, -37.000004)
+type = 1
+
+[node name="Guard" parent="." unique_id=1314558136 node_paths=PackedStringArray("targetPath") instance=ExtResource("8_klt6r")]
+position = Vector2(188, 16)
+targetPath = NodePath("../GuardPath")
+
+[node name="GuardPath" type="Path2D" parent="." unique_id=1362862260]
+curve = SubResource("Curve2D_ljbgv")
+
+[node name="Spotlight" parent="." unique_id=1108454828 node_paths=PackedStringArray("targetPathPos") instance=ExtResource("9_6wku1")]
+position = Vector2(348, -167)
+targetPathPos = NodePath("../SpotlightPath/PathFollow2D")
+
+[node name="SpotlightPath" type="Path2D" parent="." unique_id=829984328]
+curve = SubResource("Curve2D_e657c")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SpotlightPath" unique_id=1216081325]
+position = Vector2(256, -128)
+rotation = -1.5707964
+
+[node name="Platform" parent="." unique_id=1556636507 instance=ExtResource("7_mvss5")]
+position = Vector2(388.04416, -113.93504)
+
+[node name="Spotlight2" parent="." unique_id=1692021900 node_paths=PackedStringArray("targetPathPos") instance=ExtResource("9_6wku1")]
+position = Vector2(538.1074, -244.53284)
+targetPathPos = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=788726041]
+position = Vector2(19.335, 0)
+curve = SubResource("Curve2D_woo7q")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1643627068]
+position = Vector2(440.665, -208)
+rotation = 0.039714217
+
+[node name="Platform2" parent="." unique_id=1357018612 instance=ExtResource("7_mvss5")]
+position = Vector2(534.00006, -221.00002)
+rotation = 1.5707964
+type = 1
+
+[node name="Platform3" parent="." unique_id=88505576 instance=ExtResource("7_mvss5")]
+position = Vector2(534.00006, -279)
+rotation = 1.5707964
+type = 1
+
+[node name="StreetLight2" parent="." unique_id=622009645 instance=ExtResource("6_ec1r3")]
+position = Vector2(631, -216)
+
+[node name="Platform4" parent="." unique_id=1863489551 instance=ExtResource("7_mvss5")]
+position = Vector2(738, -249.00002)
+type = 1
+
+[node name="Loot2" parent="." unique_id=775132210 instance=ExtResource("4_4c1wq")]
+position = Vector2(904, -343)
