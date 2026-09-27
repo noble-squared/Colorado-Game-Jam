@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btbyejebdjwdy"]
 
-[ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/ColoradoGameJamEnvironmentTileSet.png" id="1_q560k"]
+[ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="1_q560k"]
 [ext_resource type="Script" uid="uid://bg3ttlxr66san" path="res://Scripts/street_light.gd" id="2_kgbj5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5hjs8"]
