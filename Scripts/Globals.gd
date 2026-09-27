@@ -1,5 +1,9 @@
 extends Node
 
+var levels = ["res://Scenes/level_1.tscn"]
+
+var current_level = 0
+
 
 enum States {NIGHT, DAY}
 
@@ -20,6 +24,9 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("SwapTime"):
 		swapState()
 
+func next_level():
+	current_level += 1
+	get_tree().current_scene = levels[current_level]
 
 func swapState():
 	times_swapped += 1
