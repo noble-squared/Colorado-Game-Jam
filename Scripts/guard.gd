@@ -47,7 +47,7 @@ func _on_wait_timer_timeout() -> void:
 	currPoint += 1 if (direction == Direction.Forward) else -1
 	if (currPoint >= targetPath.curve.point_count):
 		if (loop):
-			currPoint = 0
+			currPoint = 1
 		else:
 			currPoint = targetPath.curve.point_count - 2
 			direction = Direction.Backward
@@ -55,7 +55,7 @@ func _on_wait_timer_timeout() -> void:
 		if (loop):
 			currPoint = targetPath.curve.point_count - 2
 		else:
-			currPoint = 0
+			currPoint = 1
 			direction = Direction.Forward
 	currState = State.Walking
 	sprite.play("moving")

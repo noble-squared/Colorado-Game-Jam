@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjdykkxubwt17" path="res://Scripts/guard.gd" id="1_p570l"]
 [ext_resource type="Texture2D" uid="uid://dywk5p5vdgiv1" path="res://assets/art/Guard-Sheet.png" id="2_smm0d"]
+[ext_resource type="Texture2D" uid="uid://br75be14u26k2" path="res://assets/art/Guard_Stationary-Sheet.png" id="3_cnet1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g5w7"]
 
@@ -37,13 +38,13 @@ region = Rect2(192, 0, 32, 32)
 atlas = ExtResource("2_smm0d")
 region = Rect2(224, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_smm0d"]
-atlas = ExtResource("2_smm0d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xva2a"]
+atlas = ExtResource("3_cnet1")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xva2a"]
-atlas = ExtResource("2_smm0d")
-region = Rect2(128, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmm34"]
+atlas = ExtResource("3_cnet1")
+region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xva2a"]
 animations = [{
@@ -78,14 +79,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_smm0d")
+"texture": SubResource("AtlasTexture_xva2a")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xva2a")
+"texture": SubResource("AtlasTexture_jmm34")
 }],
 "loop": true,
 "name": &"stationary",
-"speed": 1.0
+"speed": 2.0
 }]
 
 [node name="Guard" type="Area2D" unique_id=1314558136]
