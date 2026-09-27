@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dt5u0rcl15igd"]
+
+[ext_resource type="PackedScene" uid="uid://bfebdm5v7nnsc" path="res://Scenes/buttons/restart_level_button.tscn" id="1_a00f1"]
+[ext_resource type="Script" uid="uid://bfsob8g8xc4ta" path="res://Scripts/next_button.gd" id="2_awi1s"]
+
+[node name="WinScreen" type="Control" unique_id=1889581568]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="ColorRect" parent="." unique_id=1718095429]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.23137255)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=611898731]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -29.0
+offset_right = 128.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=605053055]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=774400194]
+layout_mode = 2
+
+[node name="RestartLevelButton" parent="VBoxContainer/HBoxContainer" unique_id=472408553 instance=ExtResource("1_a00f1")]
+layout_mode = 2
+
+[node name="NextButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1492722035]
+layout_mode = 2
+text = "Next (No work :( )"
+script = ExtResource("2_awi1s")

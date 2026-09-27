@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://cmtdskuc63a1r"]
+
+[ext_resource type="Script" uid="uid://dd8gmt7vcexwq" path="res://Scripts/pause_menu.gd" id="1_emv3i"]
+[ext_resource type="PackedScene" uid="uid://bfebdm5v7nnsc" path="res://Scenes/buttons/restart_level_button.tscn" id="2_bpi0q"]
+[ext_resource type="PackedScene" uid="uid://b5vw30libii87" path="res://Scenes/buttons/main_menu_button.tscn" id="3_vmyb1"]
+[ext_resource type="PackedScene" uid="uid://c2qh6v3t7l755" path="res://Scenes/buttons/quit_button.tscn" id="4_myy0f"]
+
+[node name="PauseMenu" type="Control" unique_id=1805321888]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_emv3i")
+
+[node name="Panel" type="ColorRect" parent="." unique_id=383057475]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.23137255)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=608043162]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -54.5
+offset_top = -64.0
+offset_right = 54.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=634179768]
+layout_mode = 2
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RestartLevelButton" parent="VBoxContainer" unique_id=472408553 instance=ExtResource("2_bpi0q")]
+layout_mode = 2
+
+[node name="MainMenuButton" parent="VBoxContainer" unique_id=2134114912 instance=ExtResource("3_vmyb1")]
+layout_mode = 2
+
+[node name="QuitButton" parent="VBoxContainer" unique_id=435335843 instance=ExtResource("4_myy0f")]
+layout_mode = 2

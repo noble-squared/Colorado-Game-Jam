@@ -14,11 +14,7 @@ func _process(delta: float) -> void:
 		if (spottedTime <= maxGracePeriod):
 			spottedTime += delta
 		else:
-			# TODO Maybe change this to be better
 			die()
 			
 func die():
-	characterBody.get_parent().find_child("GameOverLayer").find_child("GameOverScreen").gameOver()
-
-func win():
-	print("YOU WIN!!!!!!")
+	characterBody.find_child("GameOverLayer").find_child("GameOverScreen").gameOver()
