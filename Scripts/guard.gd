@@ -26,19 +26,19 @@ func _ready() -> void:
 		# Stationary guard
 		push_warning("Guard will be stationary")
 		if (targetPath and targetPath.curve.point_count == 1):
-			position = targetPath.curve.get_point_position(currPoint)
+			position = targetPath.curve.get_point_position(currPoint) + targetPath.position
 		return
-	position = targetPath.curve.get_point_position(currPoint)
+	position = targetPath.curve.get_point_position(currPoint) + targetPath.position
 	waitTimer.one_shot = true
 	waitTimer.wait_time = stopDuration
 	waitTimer.start()
 
 func _process(delta: float) -> void:
 	if (currState == State.Walking):
-		var targetpos: Vector2 = (targetPath.curve.get_point_position(currPoint) - position).limit_length(moveSpeed * delta)
+		var targetpos: Vector2 = (targetPath.curve.get_point_position(currPoint) - position + targetPath.position).limit_length(moveSpeed * delta)
 		position += targetpos
 		
-		if (position.is_equal_approx(targetPath.curve.get_point_position(currPoint))):
+		if (position.is_equal_approx(targetPath.curve.get_point_position(currPoint) + targetPath.position)):
 			sprite.play("stationary")
 			currState = State.Standing
 			waitTimer.start()
@@ -59,5 +59,5 @@ func _on_wait_timer_timeout() -> void:
 			direction = Direction.Forward
 	currState = State.Walking
 	sprite.play("moving")
-	sprite.flip_h = (targetPath.curve.get_point_position(currPoint) - position).x < 0
+	sprite.flip_h = (targetPath.curve.get_point_position(currPoint) - position + targetPath.position).x < 0
 	
