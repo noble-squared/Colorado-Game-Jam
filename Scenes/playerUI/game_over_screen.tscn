@@ -45,6 +45,7 @@ theme_override_constants/separation = 16
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=806543367]
 layout_mode = 2
 text = "You were caught!"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2043742029]
 layout_mode = 2

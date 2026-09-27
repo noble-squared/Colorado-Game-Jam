@@ -13,8 +13,7 @@
 _data = [Vector2(0, 0.31622303), 0.0, 0.0023689577, 0, 0, Vector2(0.5099503, 0.52492607), 0.7065144, 0.7065144, 0, 0, Vector2(1, 1), 1.1039288, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
-radius = 16.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8erm5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
 atlas = ExtResource("4_x3wgy")
@@ -162,7 +161,7 @@ wallSlideVerticalCurbCurve = SubResource("Curve_6t5aa")
 script = ExtResource("2_cvnsp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=168073884]
-shape = SubResource("CircleShape2D_6t5aa")
+shape = SubResource("CapsuleShape2D_8erm5")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=857247410]
 zoom = Vector2(3, 3)
@@ -173,6 +172,7 @@ animation = &"Walk"
 autoplay = "default"
 frame = 4
 frame_progress = 0.85994726
+offset = Vector2(4, 0)
 
 [node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=541839562]
 

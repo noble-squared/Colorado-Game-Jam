@@ -16,8 +16,8 @@ func _process(delta: float) -> void:
 		else:
 			die()
 			
-func die():
-	characterBody.find_child("GameOverLayer").find_child("GameOverScreen").gameOver()
+func die(reason: String = "You were caught!"):
+	characterBody.find_child("GameOverLayer").find_child("GameOverScreen").gameOver(reason)
 
 func win():
 	characterBody.find_child("WinLayer").find_child("WinScreen").win()
