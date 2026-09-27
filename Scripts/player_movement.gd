@@ -44,8 +44,7 @@ func _physics_process(delta: float) -> void:
 			characterBody.velocity = characterBody.get_gravity() * delta * wallSlideVerticalCurbCurve.sample(timeWallRiding / maxTimeWallRiding)
 		else:
 			applyNormalGravity(delta)
-		if (Input.is_action_just_pressed("Jump") &&  sign(horizontalDelta) != 0):
-			#jumpsInARow += 1
+		if (Input.is_action_just_pressed("Jump") && sign(horizontalDelta) != 0):
 			characterBody.velocity.y = -wallJumpImpulse.y
 			characterBody.velocity.x -= wallJumpImpulse.x * sign(horizontalDelta)
 			if (sign(horizontalDelta)):
@@ -64,9 +63,11 @@ func _physics_process(delta: float) -> void:
 	
 	if(horizontalDelta <0 && !characterBody.is_on_wall_only()):
 		animated_sprite_2d.flip_h = true
+		animated_sprite_2d.offset.x = -4
 		
 	elif(horizontalDelta >0 && !characterBody.is_on_wall_only()):
 		animated_sprite_2d.flip_h = false
+		animated_sprite_2d.offset.x = 4
 	else:
 		animated_sprite_2d.play("default")
 		
@@ -78,6 +79,7 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("Walk")
 	elif(characterBody.is_on_wall_only()):
 		animated_sprite_2d.play("Wall Slide")
+		animated_sprite_2d.offset.x = 0
 		
 	else:
 		animated_sprite_2d.play("Jump")
