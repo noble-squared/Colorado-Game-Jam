@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://djlm2lpjevixc"]
+[gd_scene format=3 uid="uid://ddfmdwr4w2hln"]
 
-[ext_resource type="Script" uid="uid://bjdykkxubwt17" path="res://Scripts/guard.gd" id="1_p570l"]
-[ext_resource type="Texture2D" uid="uid://dywk5p5vdgiv1" path="res://assets/art/Guard-Sheet.png" id="2_smm0d"]
+[ext_resource type="Script" path="res://Scripts/guard.gd" id="1_p570l"]
+[ext_resource type="Texture2D" uid="uid://dywk5p5vdgiv1" path="res://assets/art/Sprite Sheets/Guard-Sheet.png" id="2_smm0d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g5w7"]
 
@@ -79,5 +79,7 @@ shape = SubResource("CapsuleShape2D_5g5w7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=367334441]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_xva2a")
+frame = 4
+frame_progress = 0.24473217
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
