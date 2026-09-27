@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://cmtdskuc63a1r" path="res://Scenes/playerUI/pause_menu.tscn" id="8_tx1dd"]
 [ext_resource type="PackedScene" uid="uid://dt5u0rcl15igd" path="res://Scenes/playerUI/win_screen.tscn" id="9_gymyn"]
 
+[sub_resource type="Curve" id="Curve_6t5aa"]
+_data = [Vector2(0, 0.31622303), 0.0, 0.0023689577, 0, 0, Vector2(0.5099503, 0.52492607), 0.7065144, 0.7065144, 0, 0, Vector2(1, 1), 1.1039288, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_6t5aa"]
 radius = 16.0
 
@@ -152,6 +156,7 @@ metadata/has_loot = false
 
 [node name="PlayerMovement" type="Node2D" parent="." unique_id=1636263960]
 script = ExtResource("1_v0iea")
+wallSlideVerticalCurbCurve = SubResource("Curve_6t5aa")
 
 [node name="PlayerHealth" type="Node2D" parent="." unique_id=2124813211]
 script = ExtResource("2_cvnsp")

@@ -29,6 +29,11 @@ func swapState():
 	elif current_state == States.DAY:
 		current_state = States.NIGHT
 		NightSwapped.emit()
-		
-		
-		
+
+func setDayNight(targetState: States):
+	if (current_state != targetState):
+		current_state = targetState
+		if (targetState == States.DAY):
+			DaySwapped.emit()
+		else:
+			NightSwapped.emit()

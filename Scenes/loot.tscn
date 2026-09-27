@@ -1,10 +1,52 @@
 [gd_scene format=3 uid="uid://ck765sbran6xt"]
 
 [ext_resource type="Script" uid="uid://b532ureio5r08" path="res://Scripts/loot.gd" id="1_gg2i2"]
+[ext_resource type="Texture2D" uid="uid://bpoj5r6pgovs0" path="res://assets/art/Diamonds.png" id="2_rg653"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dqmmn"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_gg2i2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvcho"]
+atlas = ExtResource("2_rg653")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk60n"]
+atlas = ExtResource("2_rg653")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4ol7"]
+atlas = ExtResource("2_rg653")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50uj4"]
+atlas = ExtResource("2_rg653")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5cyu"]
+atlas = ExtResource("2_rg653")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4fix1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvcho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk60n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4ol7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50uj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5cyu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Loot" type="Area2D" unique_id=213962639]
 script = ExtResource("1_gg2i2")
@@ -12,9 +54,9 @@ script = ExtResource("1_gg2i2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=162332439]
 shape = SubResource("CircleShape2D_dqmmn")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1711673363]
-position = Vector2(4.7683716e-07, 0.5)
-scale = Vector2(16.000002, 15)
-texture = SubResource("CanvasTexture_gg2i2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1673233933]
+position = Vector2(3.5762787e-07, -1.4999999)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_4fix1")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
