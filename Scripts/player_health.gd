@@ -15,4 +15,7 @@ func _process(delta: float) -> void:
 			spottedTime += delta
 		else:
 			# TODO Maybe change this to be better
-			characterBody.get_parent().find_child("GameOverLayer").find_child("GameOverScreen").gameOver()
+			die()
+			
+func die():
+	characterBody.get_parent().find_child("GameOverLayer").find_child("GameOverScreen").gameOver()

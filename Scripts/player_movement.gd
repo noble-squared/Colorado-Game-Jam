@@ -1,6 +1,7 @@
 extends Node2D
 
 var characterBody: CharacterBody2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 
 @export var baseWalkSpeed: float = 300
 @export var inertia: float = 0.85 ## [0-1): 0 is no inertia and 1 is no change
@@ -59,5 +60,21 @@ func _physics_process(delta: float) -> void:
 			timeWallRiding = 0
 			jumpsInARow = 0
 	
+  if(horizontalDelta <0):
+		animated_sprite_2d.flip_h = true
+		
+	elif(horizontalDelta >0):
+		animated_sprite_2d.flip_h = false
+	else:
+		animated_sprite_2d.play("default")
+		
+	if(characterBody.is_on_floor()):
+		if(horizontalDelta <0):
+			animated_sprite_2d.play("Walk")
+		
+		elif(horizontalDelta >0):
+			animated_sprite_2d.play("Walk")
+	else:
+		animated_sprite_2d.play("Jump")
 	
 	characterBody.move_and_slide() # Move and slide
