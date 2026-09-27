@@ -52,13 +52,13 @@ func _physics_process(delta: float) -> void:
 			else:
 				rightMoveLimit = 0
 	else:
+		timeWallRiding = 0
 		applyNormalGravity(delta)
 		if (Input.is_action_just_pressed("Jump") && jumpsInARow < maxJumpsInARow): # Jumping
 			characterBody.velocity.y = -jumpImpulse
 			jumpsInARow += 1
 			print(jumpsInARow)
 		elif (characterBody.is_on_floor()):
-			timeWallRiding = 0
 			jumpsInARow = 0
 	
 	if(horizontalDelta <0 && !characterBody.is_on_wall_only()):
