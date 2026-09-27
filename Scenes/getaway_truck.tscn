@@ -1,20 +1,40 @@
-[gd_scene format=3 uid="uid://tx1uk4se1n2w"]
+[gd_scene format=3 uid="uid://dol0a51giqtfq"]
 
 [ext_resource type="Script" uid="uid://dfrgiy0avg5jb" path="res://Scripts/getaway_truck.gd" id="1_qcc7o"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x7j0l"]
-size = Vector2(128, 64)
+[ext_resource type="Texture2D" uid="uid://cid21mnc88lm2" path="res://assets/art/Sprite Sheets/Truck-Sheet.png" id="2_x7j0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jntst"]
 size = Vector2(128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jntst"]
+atlas = ExtResource("2_x7j0l")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psrnj"]
+atlas = ExtResource("2_x7j0l")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_obooc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jntst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_psrnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jntst")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="GetawayTruck" type="Area2D" unique_id=868867607]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_qcc7o")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=959960291]
-texture = SubResource("PlaceholderTexture2D_x7j0l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2129560428]
 shape = SubResource("RectangleShape2D_jntst")
@@ -25,6 +45,12 @@ offset_top = -60.0
 offset_right = 66.0
 offset_bottom = -37.0
 text = "Get the diamond"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=39955542]
+position = Vector2(-18, -7)
+scale = Vector2(2.625, 2.625)
+sprite_frames = SubResource("SpriteFrames_obooc")
+autoplay = "default"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

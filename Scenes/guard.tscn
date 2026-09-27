@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://djlm2lpjevixc"]
+[gd_scene format=3 uid="uid://ddfmdwr4w2hln"]
+
 
 [ext_resource type="Script" uid="uid://bjdykkxubwt17" path="res://Scripts/guard.gd" id="1_p570l"]
-[ext_resource type="Texture2D" uid="uid://dywk5p5vdgiv1" path="res://assets/art/Guard-Sheet.png" id="2_smm0d"]
 [ext_resource type="Texture2D" uid="uid://br75be14u26k2" path="res://assets/art/Guard_Stationary-Sheet.png" id="3_cnet1"]
+[ext_resource type="Texture2D" uid="uid://dywk5p5vdgiv1" path="res://assets/art/Sprite Sheets/Guard-Sheet.png" id="2_smm0d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g5w7"]
 
@@ -104,6 +105,8 @@ sprite_frames = SubResource("SpriteFrames_xva2a")
 animation = &"stationary"
 
 [node name="WaitTimer" type="Timer" parent="." unique_id=1328085100]
+frame = 4
+frame_progress = 0.24473217
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_wait_timer_timeout"]
