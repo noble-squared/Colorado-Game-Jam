@@ -6,9 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://5xetlc2tbsu8" path="res://Scenes/spotlight.tscn" id="4_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_3dryh"]
-[ext_resource type="PackedScene" uid="uid://tx1uk4se1n2w" path="res://Scenes/getaway_truck.tscn" id="4_ldgsr"]
-[ext_resource type="PackedScene" uid="uid://djlm2lpjevixc" path="res://Scenes/guard.tscn" id="6_i6g32"]
-[ext_resource type="PackedScene" path="res://Scenes/street_light.tscn" id="9_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://dol0a51giqtfq" path="res://Scenes/getaway_truck.tscn" id="4_ldgsr"]
+[ext_resource type="PackedScene" uid="uid://ddfmdwr4w2hln" path="res://Scenes/guard.tscn" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://btbyejebdjwdy" path="res://Scenes/street_light.tscn" id="9_h4fw4"]
+[ext_resource type="PackedScene" uid="uid://devv5sj3bpqso" path="res://Scenes/background.tscn" id="10_ldgsr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4fw4"]
 texture = ExtResource("2_v158k")
@@ -129,3 +130,7 @@ position = Vector2(359, 8)
 
 [node name="GetawayTruck" parent="." unique_id=868867607 instance=ExtResource("4_ldgsr")]
 position = Vector2(686, -1)
+
+[node name="Background" parent="." unique_id=288593620 instance=ExtResource("10_ldgsr")]
+z_index = -1
+position = Vector2(-286, 130)
