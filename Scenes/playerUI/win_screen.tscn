@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dt5u0rcl15igd"]
 
 [ext_resource type="PackedScene" uid="uid://bfebdm5v7nnsc" path="res://Scenes/buttons/restart_level_button.tscn" id="1_a00f1"]
-[ext_resource type="Script" uid="uid://bfsob8g8xc4ta" path="res://Scripts/next_button.gd" id="2_awi1s"]
+[ext_resource type="Script" uid="uid://cmjpfa7eefcky" path="res://Scripts/win_screen.gd" id="1_kgbfu"]
+[ext_resource type="Script" path="res://Scripts/next_button.gd" id="2_awi1s"]
 
 [node name="WinScreen" type="Control" unique_id=1889581568]
 visible = false
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_kgbfu")
 
 [node name="Panel" type="ColorRect" parent="." unique_id=1718095429]
 layout_mode = 1
