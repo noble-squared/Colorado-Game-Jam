@@ -64,9 +64,11 @@ func _physics_process(delta: float) -> void:
 	
 	if(horizontalDelta <0 && !characterBody.is_on_wall_only()):
 		animated_sprite_2d.flip_h = true
+		animated_sprite_2d.offset.x = -4
 		
 	elif(horizontalDelta >0 && !characterBody.is_on_wall_only()):
 		animated_sprite_2d.flip_h = false
+		animated_sprite_2d.offset.x = 4
 	else:
 		animated_sprite_2d.play("default")
 		

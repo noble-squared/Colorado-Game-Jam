@@ -6,11 +6,12 @@ func _ready() -> void:
 	position.y = -get_viewport_rect().size.y
 	visible = false
 
-func gameOver() -> void:
+func gameOver(reason: String = "You were caught!") -> void:
 	visible = true
+	$VBoxContainer/Label.text = reason
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", Vector2(0, 0), 1.0)
-	tween.set_ease(Tween.EASE_IN)
+	tween.set_ease(Tween.EASE_IN_OUT)
 	tween.set_trans(Tween.TRANS_SINE)
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	get_tree().paused = true

@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var maxJumpsBeforeGem: int = -1
+var gotGem: bool = false
+@export var maxJumpsTotal: int = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,10 +15,19 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
+func checkIfTooManyJumps():
+	if (Globals.times_swapped == maxJumpsTotal):
+		find_child("Player").find_child("PlayerHealth").die("You ran out of power!")
+	
+	if (Globals.times_swapped == maxJumpsBeforeGem && not gotGem):
+		find_child("Player").find_child("PlayerHealth").die("The gem was transported away!")
+
 
 func _on_day_swapped():
+	checkIfTooManyJumps()
 	print("Changed to day")
 	
 	
 func _on_night_swapped():
+	checkIfTooManyJumps()
 	print("changed to night")
