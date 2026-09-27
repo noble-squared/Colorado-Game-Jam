@@ -1,0 +1,104 @@
+[gd_scene format=4 uid="uid://k5qpeodyxvw1"]
+
+[ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_0ihy7"]
+[ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="2_oih13"]
+[ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_8ok1i"]
+[ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_ljbgv"]
+[ext_resource type="PackedScene" uid="uid://tx1uk4se1n2w" path="res://Scenes/getaway_truck.tscn" id="5_17iy3"]
+[ext_resource type="PackedScene" path="res://Scenes/street_light.tscn" id="6_8ok1i"]
+[ext_resource type="PackedScene" uid="uid://x6bo71sn0vlp" path="res://Scenes/platform.tscn" id="7_ljbgv"]
+[ext_resource type="PackedScene" uid="uid://djlm2lpjevixc" path="res://Scenes/guard.tscn" id="8_ljbgv"]
+[ext_resource type="PackedScene" uid="uid://5xetlc2tbsu8" path="res://Scenes/spotlight.tscn" id="9_17iy3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e657c"]
+texture = ExtResource("2_oih13")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:4/size_in_atlas = Vector2i(3, 3)
+1:4/0 = 0
+4:4/size_in_atlas = Vector2i(3, 3)
+4:4/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wcvos"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_e657c")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yuro2"]
+normal = Vector2(1, 0)
+
+[sub_resource type="Curve2D" id="Curve2D_ljbgv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 120, 16, 0, 0, 0, 0, 264, 16)
+}
+point_count = 2
+
+[sub_resource type="Curve2D" id="Curve2D_e657c"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 256, -128, 0, 0, 0, 0, 256, -194, 0, 0, 0, 0, 416, -194, 0, 0, 0, 0, 416, -128, 0, 0, 0, 0, 256, -128)
+}
+point_count = 5
+
+[node name="Game" type="Node2D" unique_id=333900588]
+script = ExtResource("1_0ihy7")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=297308668]
+tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD4/wEAAAAAAAAAAAD3/wEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAIAAAAIAAEAAAAAAAIAAAAJAAEAAAAAAAIAAAAKAAEAAAAAAAIAAAALAAEAAAAAAAIAAAAMAAEAAAAAAAIAAAANAAEAAAAAAAIAAAAOAAEAAAAAAAIAAAAPAAEAAAAAAAIAAAAQAAEAAAAAAAIAAAARAAEAAAAAAAIAAAASAAEAAAAAAAIAAAATAAEAAAAAAAIAAAAUAAEAAAAAAAIAAAAVAAEAAAAAAAIAAAAWAAEAAAAAAAIAAAAXAAEAAAAAAAIAAAAYAAEAAAAAAAIAAAAZAAEAAAAAAAIAAAAaAAEAAAAAAAIAAAALAP3/AAAAAAEAAAALAPz/AAAAAAEAAAALAPv/AAAAAAEAAAALAPr/AAAAAAEAAAALAPn/AAAAAAEAAAALAPj/AAAAAAEAAAAHAAAAAAACAAAAAAAIAAAAAAADAAAAAAAJAAAAAAADAAAAAAAKAAAAAAADAAAAAAALAAAAAAADAAAAAAAMAAAAAAADAAAAAAANAAAAAAADAAAAAAAOAAAAAAADAAAAAAAPAAAAAAADAAAAAAAQAAAAAAAEAAAAAAASAAAAAAAFAAAAAAALAP7/AAAGAAEAAAATAAAAAAACAAIAAAATAP//AAACAAEAAAAXAAAAAAAFAAAAAAAYAAAAAAACAAIAAAAYAP//AAACAAEAAAAaAAAAAAAAAAEAAAAaAP//AAAAAAEAAAAaAP7/AAAAAAEAAAAaAP3/AAAAAAEAAAA=")
+tile_set = SubResource("TileSet_wcvos")
+
+[node name="Player" parent="." unique_id=1588156878 instance=ExtResource("3_8ok1i")]
+position = Vector2(-67.99999, -4.9999995)
+
+[node name="Loot" parent="." unique_id=213962639 instance=ExtResource("4_ljbgv")]
+position = Vector2(392, -6)
+scale = Vector2(0.515, 0.515)
+
+[node name="GetawayTruck" parent="." unique_id=868867607 instance=ExtResource("5_17iy3")]
+position = Vector2(-73, -16)
+
+[node name="LeftWorldBoundary" type="StaticBody2D" parent="." unique_id=1035242529]
+position = Vector2(-145, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWorldBoundary" unique_id=414763792]
+shape = SubResource("WorldBoundaryShape2D_yuro2")
+
+[node name="StreetLight" parent="." unique_id=1535873461 instance=ExtResource("6_8ok1i")]
+position = Vector2(56, -8)
+
+[node name="Node" type="Node" parent="." unique_id=1027847893]
+
+[node name="Platform" parent="Node" unique_id=1274608817 instance=ExtResource("7_ljbgv")]
+position = Vector2(387, -37.000004)
+type = 1
+
+[node name="Guard" parent="." unique_id=1314558136 node_paths=PackedStringArray("targetPath") instance=ExtResource("8_ljbgv")]
+position = Vector2(188, 16)
+targetPath = NodePath("../GuardPath")
+
+[node name="GuardPath" type="Path2D" parent="." unique_id=1362862260]
+curve = SubResource("Curve2D_ljbgv")
+
+[node name="Spotlight" parent="." unique_id=1108454828 node_paths=PackedStringArray("targetPathPos") instance=ExtResource("9_17iy3")]
+position = Vector2(348, -167)
+targetPathPos = NodePath("../SpotlightPath/PathFollow2D")
+
+[node name="SpotlightPath" type="Path2D" parent="." unique_id=829984328]
+curve = SubResource("Curve2D_e657c")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="SpotlightPath" unique_id=1216081325]
+position = Vector2(256, -128)
+rotation = -1.5707964
