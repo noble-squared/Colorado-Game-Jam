@@ -11,11 +11,18 @@ var chaseGlobalPosition: Vector2 = Vector2.INF: set = setChasePos
 var spotlightMinDistance: float = 10
 var spotlightChaseTime: float = 5
 var spotlightCurrentChaseTime: float = 0
+var disabled: bool = false
 
 func _ready() -> void:
 	global_position = targetPathPos.global_position
 	light.modulate.a = 1
+	Globals.connect("DaySwapped", func(): setDisabled(true))
+	Globals.connect("NightSwapped", func(): setDisabled(false))
+	if (Globals.current_state == Globals.States.DAY):
+		setDisabled(true)
+
 func _process(delta: float) -> void:
+	if disabled: return
 	for body in get_overlapping_bodies():
 		if (body is CharacterBody2D):
 			if (body.find_child("PlayerHealth")):
@@ -39,6 +46,7 @@ func _process(delta: float) -> void:
 		global_position = lerp(global_position, targetPathPos.global_position, smoothingFactor * delta)
 
 func _on_body_entered(body: Node2D) -> void:
+	if disabled: return
 	if (body is CharacterBody2D):
 		light.modulate.a = 1
 		var playerHealthNode = body.find_child("PlayerHealth")
@@ -46,6 +54,7 @@ func _on_body_entered(body: Node2D) -> void:
 			playerHealthNode.isSpotted = true
 
 func _on_body_exited(body: Node2D) -> void:
+	if disabled: return
 	if (body is CharacterBody2D):
 		var playerHealthNode = body.find_child("PlayerHealth")
 		if (playerHealthNode):
@@ -55,3 +64,11 @@ func setChasePos(pos: Vector2):
 	chaseGlobalPosition = pos
 	if (pos.is_finite()):
 		spotlightCurrentChaseTime = 0
+
+func setDisabled(value: bool):
+	disabled = value
+	visible = not value
+	if (disabled):
+		monitoring = false
+	else:
+		monitoring = true
