@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://x6bo71sn0vlp" path="res://Scenes/platform.tscn" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_wrm1d"]
-[ext_resource type="PackedScene" uid="uid://ccvvan32cvlwb" path="res://Scenes/loot.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://5xetlc2tbsu8" path="res://Scenes/spotlight.tscn" id="4_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://djlm2lpjevixc" path="res://Scenes/guard.tscn" id="6_i6g32"]
 [ext_resource type="PackedScene" uid="uid://tx1uk4se1n2w" path="res://Scenes/getaway_truck.tscn" id="7_v158k"]
 
