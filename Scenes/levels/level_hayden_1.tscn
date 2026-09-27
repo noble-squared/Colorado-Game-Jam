@@ -134,18 +134,41 @@ curve = SubResource("Curve2D_nywdt")
 [node name="PathFollow2D" type="PathFollow2D" parent="SpotlightPath3" unique_id=1622548060]
 position = Vector2(352, -209)
 
-[node name="Platform" parent="." unique_id=1274608817 instance=ExtResource("7_yt7vi")]
+[node name="NightPlatform" parent="." unique_id=1274608817 instance=ExtResource("7_yt7vi")]
 scale = Vector2(1, 1)
 type = 0
 
-[node name="DayLayer" parent="Platform" index="0" unique_id=412382431]
+[node name="DayLayer" parent="NightPlatform" index="0" unique_id=412382431]
+visible = true
+tile_map_data = PackedByteArray()
+enabled = true
+
+[node name="NightLayer" parent="NightPlatform" index="1" unique_id=1099817172]
+visible = true
+tile_map_data = PackedByteArray("AAAmAOP/AgABAAAAACAlAOP/AgADAAAAACAkAOP/AgABAAAAADAZAOn/AgABAAAAACAXAOn/AgABAAAAADAYAOn/AgADAAAAACAcAPD/AgADAAAAACAdAPD/AgABAAAAACAbAPD/AgABAAAAADAbAP3/AgABAAAAADAdAP3/AgABAAAAACAcAP3/AgADAAAAACAjANz/AgADAAAAAEAjANv/AgADAAAAAEAjANr/AgADAAAAAEAjANn/AgADAAAAAEAjAN3/AgABAAAAAEAjANj/AgABAAAAAGAUAN7/AgADAAAAACAVAN7/AgABAAAAACATAN7/AgABAAAAADA=")
+enabled = true
+
+[node name="DisabledLayer" parent="NightPlatform" index="2" unique_id=537860606]
+visible = true
+tile_map_data = PackedByteArray("AAATAN7/AgACAAEAADAkAOP/AgACAAEAADAXAOn/AgACAAEAADAbAPD/AgACAAEAADAdAPD/AgACAAEAACAZAOn/AgACAAEAACAmAOP/AgACAAEAACAVAN7/AgACAAEAACAUAN7/AgADAAEAACAYAOn/AgADAAEAACAlAOP/AgADAAEAACAcAPD/AgADAAEAACAjANn/AgADAAEAAEAjANr/AgADAAEAAEAjANv/AgADAAEAAEAjANz/AgADAAEAAEAjAN3/AgACAAEAAEAjANj/AgACAAEAAGAcAP3/AgADAAEAACAdAP3/AgACAAEAACAbAP3/AgACAAEAADA=")
+
+[node name="DayPlatform" parent="." unique_id=124769672 instance=ExtResource("7_yt7vi")]
+scale = Vector2(1, 1)
+type = 1
+
+[node name="DayLayer" parent="DayPlatform" index="0" unique_id=412382431]
 visible = true
 tile_map_data = PackedByteArray("AAAmAN7/AgAAAAAAADAkAN7/AgAAAAAAACAlAN7/AgACAAAAADA=")
 enabled = true
 
-[node name="NightLayer" parent="Platform" index="1" unique_id=1099817172]
+[node name="NightLayer" parent="DayPlatform" index="1" unique_id=1099817172]
 visible = true
-tile_map_data = PackedByteArray("AAD/////AgABAAAAABAAAP//AgABAAAAAAAmAOP/AgABAAAAACAlAOP/AgADAAAAACAkAOP/AgABAAAAADAZAOn/AgABAAAAACAXAOn/AgABAAAAADAYAOn/AgADAAAAACAcAPD/AgADAAAAACAdAPD/AgABAAAAACAbAPD/AgABAAAAADAbAP3/AgABAAAAADAdAP3/AgABAAAAACAcAP3/AgADAAAAACAjANz/AgADAAAAAEAjANv/AgADAAAAAEAjANr/AgADAAAAAEAjANn/AgADAAAAAEAjAN3/AgABAAAAAEAjANj/AgABAAAAAGAUAN7/AgADAAAAACAVAN7/AgABAAAAACATAN7/AgABAAAAADA=")
+tile_map_data = PackedByteArray()
 enabled = true
 
-[editable path="Platform"]
+[node name="DisabledLayer" parent="DayPlatform" index="2" unique_id=537860606]
+visible = true
+tile_map_data = PackedByteArray("AAAlAN7/AgADAAEAACAmAN7/AgACAAEAACAkAN7/AgACAAEAADA=")
+
+[editable path="NightPlatform"]
+[editable path="DayPlatform"]
