@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://bfebdm5v7nnsc"]
 
-[ext_resource type="Script" uid="uid://7ka3t2eeak48" path="res://scripts/restart_level_button.gd" id="1_pqtnl"]
+[sub_resource type="GDScript" id="GDScript_pikts"]
+script/source = "extends Button
+
+func _on_pressed() -> void:
+	print(\"button pressed\")
+	get_tree().paused = false
+	get_tree().reload_current_scene()
+"
 
 [node name="RestartLevelButton" type="Button" unique_id=472408553]
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Restart Level"
-script = ExtResource("1_pqtnl")
+script = SubResource("GDScript_pikts")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

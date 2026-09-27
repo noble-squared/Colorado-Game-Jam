@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dm4ghbmkfq828"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_gymyn"]
+[ext_resource type="Script" uid="uid://jke4w8duw6u" path="res://Scripts/player.gd" id="1_gymyn"]
 [ext_resource type="Script" uid="uid://bbq15863u5joj" path="res://Scripts/player_movement.gd" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://dpfiwrapv15km" path="res://Scripts/player_health.gd" id="2_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://dgv1y3y64n2kn" path="res://assets/art/Sprite Sheets/Tony-Sheet-Sheet.png" id="3_6t5aa"]
@@ -341,6 +341,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1588156878 groups=["Player"]]
+z_index = 2
 scale = Vector2(0.8, 0.8)
 collision_layer = 3
 collision_mask = 5
@@ -368,6 +369,7 @@ autoplay = "default"
 [node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=541839562]
 
 [node name="GameOverScreen" parent="GameOverLayer" unique_id=962941326 instance=ExtResource("7_f1ek2")]
+visible = false
 
 [node name="PauseLayer" type="CanvasLayer" parent="." unique_id=2123868103]
 
@@ -378,10 +380,10 @@ autoplay = "default"
 [node name="WinScreen" parent="WinLayer" unique_id=1889581568 instance=ExtResource("9_gymyn")]
 
 [node name="Sun_Moon" type="AnimatedSprite2D" parent="." unique_id=126416355]
-position = Vector2(-165, -84)
+position = Vector2(-212.5, -104.99999)
 sprite_frames = SubResource("SpriteFrames_wpjfl")
 
 [node name="RemoteUI" type="AnimatedSprite2D" parent="." unique_id=354817870]
-position = Vector2(-169, 79)
+position = Vector2(-207.5, 87.5)
 sprite_frames = SubResource("SpriteFrames_sbwqj")
 animation = &"NightSwap"

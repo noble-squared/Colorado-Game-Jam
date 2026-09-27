@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://tx1uk4se1n2w"]
+[gd_scene format=3 uid="uid://dol0a51giqtfq"]
 
-[ext_resource type="Script" uid="uid://dfrgiy0avg5jb" path="res://Scripts/getaway_truck.gd" id="1_qcc7o"]
+[ext_resource type="Script" path="res://Scripts/getaway_truck.gd" id="1_qcc7o"]
 [ext_resource type="Texture2D" uid="uid://cid21mnc88lm2" path="res://assets/art/Sprite Sheets/Truck-Sheet.png" id="2_x7j0l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jntst"]
@@ -32,6 +32,7 @@ animations = [{
 }]
 
 [node name="GetawayTruck" type="Area2D" unique_id=868867607]
+scale = Vector2(0.82, 0.82)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_qcc7o")
