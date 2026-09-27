@@ -2,6 +2,9 @@
 
 [ext_resource type="Theme" uid="uid://c0s2fsegqevro" path="res://assets/themes/game_over_theme.tres" id="1_jb6in"]
 [ext_resource type="Script" uid="uid://evm8bmkr0ct" path="res://Scripts/game_over_screen.gd" id="2_y8man"]
+[ext_resource type="PackedScene" uid="uid://bfebdm5v7nnsc" path="res://Scenes/buttons/restart_level_button.tscn" id="3_e5yba"]
+[ext_resource type="PackedScene" uid="uid://b5vw30libii87" path="res://Scenes/buttons/main_menu_button.tscn" id="4_ladg1"]
+[ext_resource type="PackedScene" uid="uid://c2qh6v3t7l755" path="res://Scenes/buttons/quit_button.tscn" id="5_un84n"]
 
 [node name="GameOverScreen" type="Control" unique_id=962941326]
 process_mode = 3
@@ -48,13 +51,11 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 12
 
-[node name="RestartButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1670583303]
+[node name="RestartLevelButton" parent="VBoxContainer/HBoxContainer" unique_id=472408553 instance=ExtResource("3_e5yba")]
 layout_mode = 2
-text = "Restart"
 
-[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1759648133]
+[node name="MainMenuButton" parent="VBoxContainer/HBoxContainer" unique_id=2134114912 instance=ExtResource("4_ladg1")]
 layout_mode = 2
-text = "Menu"
 
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/HBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[node name="QuitButton" parent="VBoxContainer" unique_id=435335843 instance=ExtResource("5_un84n")]
+layout_mode = 2

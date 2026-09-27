@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b5vw30libii87"]
+
+[ext_resource type="Script" uid="uid://bsjak8ol6q32a" path="res://Scripts/main_menu_button.gd" id="1_cualn"]
+
+[node name="MainMenuButton" type="Button" unique_id=2134114912]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Main menu"
+script = ExtResource("1_cualn")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

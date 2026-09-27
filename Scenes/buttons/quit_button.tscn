@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c2qh6v3t7l755"]
+
+[ext_resource type="Script" uid="uid://c4l62m2vamnb4" path="res://scripts/quit_button.gd" id="1_f2m5b"]
+
+[node name="QuitButton" type="Button" unique_id=435335843]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Quit"
+script = ExtResource("1_f2m5b")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
