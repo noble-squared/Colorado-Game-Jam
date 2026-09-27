@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://x6bo71sn0vlp" path="res://Scenes/platform.tscn" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_wrm1d"]
+[ext_resource type="PackedScene" uid="uid://5xetlc2tbsu8" path="res://Scenes/spotlight.tscn" id="4_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://dqvg4cex7qfxk" path="res://Scenes/game_over_screen.tscn" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://djlm2lpjevixc" path="res://Scenes/guard.tscn" id="6_i6g32"]
@@ -10,16 +11,16 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3dryh"]
 distance = -70.0
 
-[sub_resource type="Curve2D" id="Curve2D_i6g32"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, -12, 0, 0, 0, 0, 134, -54, 0, 0, 0, 0, 155, -102, 0, 0, 0, 0, 76, -156, 0, 0, 0, 0, -29, -112, 0, 0, 0, 0, -92, -146, 0, 0, 0, 0, -154, -101, 0, 0, 0, 0, -115, -25, 0, 0, 0, 0, 0, 0)
-}
-point_count = 10
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i6g32"]
 size = Vector2(128, 205)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1l0tm"]
+
+[sub_resource type="Curve2D" id="Curve2D_1l0tm"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 64, -12, 0, 0, 0, 0, 134, -54, 0, 0, 0, 0, 155, -102, 0, 0, 0, 0, 76, -156, 0, 0, 0, 0, -29, -112, 0, 0, 0, 0, -92, -146, 0, 0, 0, 0, -154, -101, 0, 0, 0, 0, -115, -25, 0, 0, 0, 0, 0, 0)
+}
+point_count = 10
 
 [node name="Game" type="Node2D" unique_id=1873807053]
 script = ExtResource("1_ebmjs")
@@ -42,10 +43,6 @@ position = Vector2(87, 56)
 
 [node name="Platform3" parent="Platforms" unique_id=1179884330 instance=ExtResource("2_qxrlw")]
 position = Vector2(190.99998, -28.999998)
-
-[node name="Spotlight" parent="." unique_id=1108454828 node_paths=PackedStringArray("targetPathPos") instance=ExtResource("5_wowpa")]
-position = Vector2(-296, -31)
-targetPathPos = NodePath("../Path2D/PathFollow2D")
 
 [node name="Platform4" parent="Platforms" unique_id=748272193 instance=ExtResource("2_qxrlw")]
 position = Vector2(284.01236, -45.72314)
@@ -73,3 +70,14 @@ shape = SubResource("RectangleShape2D_i6g32")
 position = Vector2(-53.95751, -8.516586)
 scale = Vector2(-127.89751, 205.03319)
 texture = SubResource("PlaceholderTexture2D_1l0tm")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1568301961]
+position = Vector2(-240, 57)
+curve = SubResource("Curve2D_1l0tm")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1812464734]
+rotation = -0.18534794
+
+[node name="Spotlight" parent="." unique_id=1108454828 node_paths=PackedStringArray("targetPathPos") instance=ExtResource("4_1l0tm")]
+position = Vector2(316, -189)
+targetPathPos = NodePath("../Path2D/PathFollow2D")
