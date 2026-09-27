@@ -24,15 +24,20 @@ func _physics_process(delta: float) -> void:
 		#print(jumpsInARow)
 	elif (jumpsInARow != 0 && characterBody.is_on_floor()):
 		jumpsInARow = 0
+	if(horizontalDelta <0):
+		animated_sprite_2d.flip_h = true
+		
+	elif(horizontalDelta >0):
+		animated_sprite_2d.flip_h = false
+	else:
+		animated_sprite_2d.play("default")
+		
 	if(characterBody.is_on_floor()):
 		if(horizontalDelta <0):
-			animated_sprite_2d.flip_h = true
 			animated_sprite_2d.play("Walk")
+		
 		elif(horizontalDelta >0):
-			animated_sprite_2d.flip_h = false
 			animated_sprite_2d.play("Walk")
-		else:
-			animated_sprite_2d.play("default")
 	else:
 		animated_sprite_2d.play("Jump")
 	characterBody.move_and_slide() # Move and slide

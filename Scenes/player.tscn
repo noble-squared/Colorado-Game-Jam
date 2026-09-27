@@ -161,5 +161,7 @@ zoom = Vector2(3, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1590847572]
 sprite_frames = SubResource("SpriteFrames_pu2lt")
-animation = &"Jump"
+animation = &"Walk"
 autoplay = "default"
+frame = 4
+frame_progress = 0.85994726
