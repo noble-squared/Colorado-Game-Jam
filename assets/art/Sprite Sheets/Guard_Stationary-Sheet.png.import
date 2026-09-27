@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://br75be14u26k2"
-path="res://.godot/imported/Guard_Stationary-Sheet.png-01fbf43138e63b756a45f15647c1f626.ctex"
+path="res://.godot/imported/Guard_Stationary-Sheet.png-92e281f12c25ccdbbd4503e01bdfa73c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Guard_Stationary-Sheet.png"
-dest_files=["res://.godot/imported/Guard_Stationary-Sheet.png-01fbf43138e63b756a45f15647c1f626.ctex"]
+source_file="res://assets/art/Sprite Sheets/Guard_Stationary-Sheet.png"
+dest_files=["res://.godot/imported/Guard_Stationary-Sheet.png-92e281f12c25ccdbbd4503e01bdfa73c.ctex"]
 
 [params]
 
