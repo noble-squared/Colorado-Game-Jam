@@ -4,8 +4,10 @@ extends Control
 
 func _ready() -> void:
 	position.y = -get_viewport_rect().size.y
+	visible = false
 
 func gameOver() -> void:
+	visible = true
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", Vector2(0, 0), 1.0)
 	tween.set_ease(Tween.EASE_IN)
