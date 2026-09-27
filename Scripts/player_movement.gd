@@ -36,6 +36,7 @@ func _physics_process(delta: float) -> void:
 
 	#characterBody.velocity += characterBody.get_gravity() * delta # Gravity
 	if (horizontalDelta != 0 && characterBody.is_on_wall_only() && sign(horizontalDelta) != sign(characterBody.get_wall_normal().x)): # Wall sliding
+		animated_sprite_2d.flip_h = (sign(characterBody.get_wall_normal().x) ==-1)
 		if (characterBody.velocity.y < 0): characterBody.velocity.y = 0
 		if (timeWallRiding < maxTimeWallRiding):
 			#jumpsInARow = 0
@@ -61,10 +62,10 @@ func _physics_process(delta: float) -> void:
 			timeWallRiding = 0
 			jumpsInARow = 0
 	
-	if(horizontalDelta <0):
+	if(horizontalDelta <0 && !characterBody.is_on_wall_only()):
 		animated_sprite_2d.flip_h = true
 		
-	elif(horizontalDelta >0):
+	elif(horizontalDelta >0 && !characterBody.is_on_wall_only()):
 		animated_sprite_2d.flip_h = false
 	else:
 		animated_sprite_2d.play("default")
@@ -75,6 +76,9 @@ func _physics_process(delta: float) -> void:
 		
 		elif(horizontalDelta >0):
 			animated_sprite_2d.play("Walk")
+	elif(characterBody.is_on_wall_only()):
+		animated_sprite_2d.play("WallSlide")
+		
 	else:
 		animated_sprite_2d.play("Jump")
 	
