@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://cwwx0j8n5xsbx" path="res://Scripts/platform.gd" id="1_kheec"]
 [ext_resource type="Texture2D" uid="uid://b6w258bk20do5" path="res://assets/art/object_tiles.png" id="2_n5262"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcowf"]
-size = Vector2(31.868134, 6)
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mrs20"]
 texture = ExtResource("2_n5262")
 0:2/size_in_atlas = Vector2i(2, 2)
@@ -13,44 +10,50 @@ texture = ExtResource("2_n5262")
 2:2/size_in_atlas = Vector2i(2, 2)
 2:2/0 = 0
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.124178, -4.47363, 1.9872894, 8, 2.0229359, 8, 8, -8, 8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.9872894, 4.6162157, 2.0229359, 8, 5.284588, 8, 8, -8, 8)
 1:1/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -3.0031328, -4.0142374, -3.0232542, -2.0020885, -1.0010443, -2.0020885, 1.9970579, -4.0142374, 4.009207, -8, 4.009207, -8, 8)
 2:1/0 = 0
 3:1/0 = 0
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.9872894, 8, 1.9872894, 8, 8, -8, 8)
 3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.9872894, 8, 1.9872894, 8, 8, -8, 8)
 4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 5.124178, -4.47363, 1.9872894, 8, 2.0229359, 8, 8, -8, 8)
 5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1.9872894, 8, 1.9872894, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_mlqre"]
+physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_mrs20")
 
 [node name="Platform" type="Node2D" unique_id=1274608817]
 scale = Vector2(1.82, 1.82)
 script = ExtResource("1_kheec")
 
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=398132486]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1906567195]
-position = Vector2(4.91247e-07, -2.9999993)
-scale = Vector2(0.9999999, 0.9999999)
-shape = SubResource("RectangleShape2D_wcowf")
-
-[node name="DayLayer" type="TileMapLayer" parent="AnimatableBody2D" unique_id=412382431]
+[node name="DayLayer" type="TileMapLayer" parent="." unique_id=412382431]
 visible = false
-position = Vector2(-6.4373016e-06, -4.7683716e-07)
+position = Vector2(-6.4373016e-06, -4.7683713e-07)
+scale = Vector2(0.99999994, 0.99999994)
 tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 2, 0, 0, 0, 0, 0, 0, 16)
+enabled = false
 tile_set = SubResource("TileSet_mlqre")
 
-[node name="NightLayer" type="TileMapLayer" parent="AnimatableBody2D" unique_id=291136777]
+[node name="NightLayer" type="TileMapLayer" parent="." unique_id=1099817172]
 visible = false
-position = Vector2(-6.4373016e-06, -4.7683716e-07)
+position = Vector2(-6.4373016e-06, -4.7683713e-07)
+scale = Vector2(0.99999994, 0.99999994)
 tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 1, 0, 0, 0, 0, 16, 0, 0, 255, 255, 2, 0, 1, 0, 0, 0, 0, 0)
+enabled = false
 tile_set = SubResource("TileSet_mlqre")
 
-[node name="DisabledLayer" type="TileMapLayer" parent="AnimatableBody2D" unique_id=452443945]
+[node name="DisabledLayer" type="TileMapLayer" parent="." unique_id=537860606]
 visible = false
-position = Vector2(-6.4373016e-06, -4.7683716e-07)
+position = Vector2(-6.4373016e-06, -4.7683713e-07)
+scale = Vector2(0.99999994, 0.99999994)
 tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 2, 0, 1, 0, 0, 16, 0, 0, 255, 255, 2, 0, 2, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_mlqre")
