@@ -11,7 +11,7 @@ var jumpsInARow: int = 0
 @export var maxJumpsInARow: int = 2
 @export var wallSlideVerticalCurbCurve: Curve
 var timeWallRiding: float = 0
-var maxTimeWallRiding: float = 1
+var maxTimeWallRiding: float = 0.8
 
 var leftMoveLimit: float = -1
 var rightMoveLimit: float = 1
@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 			timeWallRiding = 0
 			jumpsInARow = 0
 	
-    if(horizontalDelta <0):
+	if(horizontalDelta <0):
 		animated_sprite_2d.flip_h = true
 		
 	elif(horizontalDelta >0):
