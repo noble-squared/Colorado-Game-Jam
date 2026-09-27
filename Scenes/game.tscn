@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_3dryh"]
 [ext_resource type="PackedScene" uid="uid://dqvg4cex7qfxk" path="res://Scenes/game_over_screen.tscn" id="5_wowpa"]
 [ext_resource type="PackedScene" uid="uid://djlm2lpjevixc" path="res://Scenes/guard.tscn" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://tx1uk4se1n2w" path="res://Scenes/getaway_truck.tscn" id="7_v158k"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3dryh"]
 distance = -70.0
@@ -77,6 +78,9 @@ curve = SubResource("Curve2D_1l0tm")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=1812464734]
 rotation = -0.18534794
+
+[node name="GetawayTruck" parent="Path2D" unique_id=868867607 instance=ExtResource("7_v158k")]
+position = Vector2(630, -21)
 
 [node name="Spotlight" parent="." unique_id=1108454828 node_paths=PackedStringArray("targetPathPos") instance=ExtResource("4_1l0tm")]
 position = Vector2(316, -189)
