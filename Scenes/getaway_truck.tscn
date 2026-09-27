@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://tx1uk4se1n2w"]
+
+[ext_resource type="Script" uid="uid://dfrgiy0avg5jb" path="res://Scripts/getaway_truck.gd" id="1_qcc7o"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_x7j0l"]
+size = Vector2(128, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jntst"]
+size = Vector2(128, 64)
+
+[node name="GetawayTruck" type="Area2D" unique_id=868867607]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_qcc7o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=959960291]
+texture = SubResource("PlaceholderTexture2D_x7j0l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2129560428]
+shape = SubResource("RectangleShape2D_jntst")
+
+[node name="Label" type="Label" parent="." unique_id=1666993168]
+offset_left = -65.0
+offset_top = -60.0
+offset_right = 66.0
+offset_bottom = -37.0
+text = "Get the diamond"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
