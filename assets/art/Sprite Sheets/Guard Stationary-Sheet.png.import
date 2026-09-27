@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywk5p5vdgiv1"
-path="res://.godot/imported/Guard-Sheet.png-b695897b2637cea791cc2a3f4e7dce83.ctex"
+uid="uid://bq21y7putkfuy"
+path="res://.godot/imported/Guard Stationary-Sheet.png-d05a33847fdc9111c2dabb56b871e085.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Guard-Sheet.png"
-dest_files=["res://.godot/imported/Guard-Sheet.png-b695897b2637cea791cc2a3f4e7dce83.ctex"]
+source_file="res://assets/art/Sprite Sheets/Guard Stationary-Sheet.png"
+dest_files=["res://.godot/imported/Guard Stationary-Sheet.png-d05a33847fdc9111c2dabb56b871e085.ctex"]
 
 [params]
 

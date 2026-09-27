@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpu48iefgfkn"
-path="res://.godot/imported/sunandmood-Sheet.png-d6a6843c073063c1f9dad656c04df793.ctex"
+uid="uid://dywk5p5vdgiv1"
+path="res://.godot/imported/Guard-Sheet.png-d8504fc25b8753d8bc5572b07d8dea1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/sunandmood-Sheet.png"
-dest_files=["res://.godot/imported/sunandmood-Sheet.png-d6a6843c073063c1f9dad656c04df793.ctex"]
+source_file="res://assets/art/Sprite Sheets/Guard-Sheet.png"
+dest_files=["res://.godot/imported/Guard-Sheet.png-d8504fc25b8753d8bc5572b07d8dea1e.ctex"]
 
 [params]
 
