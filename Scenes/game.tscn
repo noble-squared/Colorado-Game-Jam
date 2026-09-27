@@ -96,11 +96,6 @@ position = Vector2(461.00003, -201)
 position = Vector2(472, 10)
 scale = Vector2(0.515, 0.515)
 
-[node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=1286237721]
-
-[node name="GameOverScreen" parent="GameOverLayer" unique_id=962941326 instance=ExtResource("5_wowpa")]
-visible = false
-
 [node name="Guard" parent="." unique_id=1314558136 instance=ExtResource("6_i6g32")]
 position = Vector2(202, 62)
 
