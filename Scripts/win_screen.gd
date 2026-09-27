@@ -1,0 +1,12 @@
+extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	visible = false
+	
+
+
+func win():
+	visible = true
+	get_tree().paused = true

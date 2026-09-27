@@ -18,3 +18,7 @@ func _process(delta: float) -> void:
 			
 func die():
 	characterBody.find_child("GameOverLayer").find_child("GameOverScreen").gameOver()
+
+
+func win():
+	characterBody.find_child("WinLayer").find_child("WinScreen").win()

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b8a8ouyy1tkum"
-path="res://.godot/imported/ColoradoGameJamEnvironmentTileSet.png-ba96a69c71767315b90af394671b4960.ctex"
+path="res://.godot/imported/ColoradoGameJamEnvironmentTileSet.png-e80af3d73221c144286007b3a38db6ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/ColoradoGameJamEnvironmentTileSet.png"
-dest_files=["res://.godot/imported/ColoradoGameJamEnvironmentTileSet.png-ba96a69c71767315b90af394671b4960.ctex"]
+source_file="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png"
+dest_files=["res://.godot/imported/ColoradoGameJamEnvironmentTileSet.png-e80af3d73221c144286007b3a38db6ea.ctex"]
 
 [params]
 
