@@ -10,10 +10,11 @@ var chaseGlobalPosition: Vector2 = Vector2.INF: set = setChasePos
 var spotlightMinDistance: float = 10
 var spotlightChaseTime: float = 5
 var spotlightCurrentChaseTime: float = 0
+@onready var light: Sprite2D = $Light
 
 func _ready() -> void:
 	global_position = targetPathPos.global_position
-
+	light.modulate.a = 1
 func _process(delta: float) -> void:
 	for body in get_overlapping_bodies():
 		if (body is CharacterBody2D):
@@ -39,6 +40,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body is CharacterBody2D):
+		light.modulate.a = 2
 		var playerHealthNode = body.find_child("PlayerHealth")
 		if (playerHealthNode):
 			playerHealthNode.isSpotted = true
