@@ -47,13 +47,13 @@ func _on_wait_timer_timeout() -> void:
 	currPoint += 1 if (direction == Direction.Forward) else -1
 	if (currPoint >= targetPath.curve.point_count):
 		if (loop):
-			currPoint = 1
+			currPoint = 0
 		else:
 			currPoint = targetPath.curve.point_count - 2
 			direction = Direction.Backward
 	elif (currPoint < 0):
 		if (loop):
-			currPoint = targetPath.curve.point_count - 2
+			currPoint = targetPath.curve.point_count - 1
 		else:
 			currPoint = 1
 			direction = Direction.Forward
