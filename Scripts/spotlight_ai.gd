@@ -3,6 +3,7 @@ class_name Spotlight2D
 
 @export var targetPathPos: PathFollow2D
 @export var moveSpeed: float = 100
+@onready var light: Sprite2D = $light
 
 var smoothingFactor: float = 1
 
@@ -13,12 +14,14 @@ var spotlightCurrentChaseTime: float = 0
 @onready var light: Sprite2D = $Light
 
 func _ready() -> void:
+	light.modulate.a = 1
 	global_position = targetPathPos.global_position
 	light.modulate.a = 1
 func _process(delta: float) -> void:
 	for body in get_overlapping_bodies():
 		if (body is CharacterBody2D):
 			if (body.find_child("PlayerHealth")):
+				light.modulate.a = 2
 				chaseGlobalPosition = body.global_position
 	
 	if (chaseGlobalPosition.is_finite()): # Move towards chase location
@@ -40,7 +43,11 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if (body is CharacterBody2D):
+<<<<<<< Updated upstream
 		light.modulate.a = 2
+=======
+		
+>>>>>>> Stashed changes
 		var playerHealthNode = body.find_child("PlayerHealth")
 		if (playerHealthNode):
 			playerHealthNode.isSpotted = true

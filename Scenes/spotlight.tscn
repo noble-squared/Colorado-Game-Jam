@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://5xetlc2tbsu8"]
 
 [ext_resource type="Script" uid="uid://b1pwpoewf8wah" path="res://Scripts/spotlight_ai.gd" id="1_p754v"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://dshnffv58rieu" path="res://assets/art/Spotlight.png" id="2_4soar"]
 [ext_resource type="Texture2D" uid="uid://bc1madw6drtts" path="res://assets/art/Spotlight beam.png" id="3_nkc8l"]
+=======
+[ext_resource type="Texture2D" uid="uid://j358xx13f52c" path="res://assets/art/Spotlight.png" id="2_4soar"]
+[ext_resource type="Texture2D" uid="uid://dovdkous65vxa" path="res://assets/art/Spotlight beam.png" id="3_nkc8l"]
+>>>>>>> Stashed changes
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_spmcn"]
 radius = 32.0
@@ -16,6 +21,7 @@ metadata/_custom_type_script = "uid://b1pwpoewf8wah"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546856041]
 shape = SubResource("CircleShape2D_spmcn")
 
+<<<<<<< Updated upstream
 [node name="Light" type="Sprite2D" parent="." unique_id=1796816077]
 self_modulate = Color(1, 1, 1, 0.34901962)
 texture = ExtResource("2_4soar")
@@ -23,6 +29,14 @@ texture = ExtResource("2_4soar")
 [node name="Beam" type="Sprite2D" parent="." unique_id=1392008151]
 self_modulate = Color(1, 1, 1, 0.12941177)
 position = Vector2(-96, -96)
+=======
+[node name="light" type="Sprite2D" parent="." unique_id=1796816077]
+texture = ExtResource("2_4soar")
+
+[node name="beam" type="Sprite2D" parent="." unique_id=2146426657]
+self_modulate = Color(1, 1, 1, 0.06666667)
+position = Vector2(-95, -95)
+>>>>>>> Stashed changes
 texture = ExtResource("3_nkc8l")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
