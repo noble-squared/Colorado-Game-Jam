@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://btbyejebdjwdy"]
+
+[ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="1_q560k"]
+[ext_resource type="Script" uid="uid://bg3ttlxr66san" path="res://Scripts/street_light.gd" id="2_kgbj5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hjs8"]
+atlas = ExtResource("1_q560k")
+region = Rect2(16, 64, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aywf4"]
+atlas = ExtResource("1_q560k")
+region = Rect2(64, 64, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_exxs6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hjs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aywf4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StreetLight" type="AnimatedSprite2D" unique_id=1535873461]
+sprite_frames = SubResource("SpriteFrames_exxs6")
+script = ExtResource("2_kgbj5")

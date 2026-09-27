@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://br75be14u26k2"
-path="res://.godot/imported/Guard_Stationary-Sheet.png-01fbf43138e63b756a45f15647c1f626.ctex"
+uid="uid://b8a8ouyy1tkum"
+path="res://.godot/imported/ColoradoGameJamEnvironmentTileSet.png-e80af3d73221c144286007b3a38db6ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/art/Guard_Stationary-Sheet.png"
-dest_files=["res://.godot/imported/Guard_Stationary-Sheet.png-01fbf43138e63b756a45f15647c1f626.ctex"]
+source_file="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png"
+dest_files=["res://.godot/imported/ColoradoGameJamEnvironmentTileSet.png-e80af3d73221c144286007b3a38db6ea.ctex"]
 
 [params]
 
