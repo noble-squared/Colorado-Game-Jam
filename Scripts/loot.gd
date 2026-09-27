@@ -1,11 +1,13 @@
 extends Area2D
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
+var rng = RandomNumberGenerator.new()
 
 func _ready():
 	Globals.connect("DaySwapped", _on_day_swapped)
-
+	animated_sprite_2d.frame = randi_range(0,5)
 
 
 func _on_body_entered(body: Node2D) -> void:
