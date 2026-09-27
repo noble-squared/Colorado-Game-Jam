@@ -1,20 +1,16 @@
-extends Node2D
+extends AnimatedSprite2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.connect("DaySwapped", _on_day_swapped)
 	Globals.connect("NightSwapped", _on_night_swapped)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	pass
+	_on_day_swapped()
 
 
 func _on_day_swapped():
-	print("Changed to day")
-	
+	frame = 0
 	
 func _on_night_swapped():
-	print("changed to night")
+	frame = 1
+	

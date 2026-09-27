@@ -48,6 +48,17 @@ position = Vector2(190.99998, -28.999998)
 position = Vector2(284.01236, -45.72314)
 type = 1
 
+[node name="Platform5" parent="Platforms" unique_id=1446749655 instance=ExtResource("2_qxrlw")]
+position = Vector2(492.8099, -42.41733)
+
+[node name="Platform6" parent="Platforms" unique_id=1878798194 instance=ExtResource("2_qxrlw")]
+position = Vector2(618.00006, -132)
+rotation = -1.5707964
+type = 1
+
+[node name="Platform7" parent="Platforms" unique_id=1933837265 instance=ExtResource("2_qxrlw")]
+position = Vector2(461.00003, -201)
+
 [node name="Loot" parent="." unique_id=445002194 instance=ExtResource("4_3dryh")]
 position = Vector2(1, 21)
 
