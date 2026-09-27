@@ -171,6 +171,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1588156878 groups=["Player"]]
+scale = Vector2(0.8, 0.8)
 collision_layer = 3
 collision_mask = 5
 metadata/has_loot = false
@@ -196,6 +197,6 @@ frame = 4
 frame_progress = 0.85994726
 
 [node name="Sun_Moon" type="AnimatedSprite2D" parent="." unique_id=1330120663]
-position = Vector2(-167, -86)
+position = Vector2(-211.24998, -107.49999)
 sprite_frames = SubResource("SpriteFrames_wpjfl")
 script = ExtResource("7_3smsa")
