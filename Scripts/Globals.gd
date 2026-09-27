@@ -1,6 +1,6 @@
 extends Node
 
-var levels = ["res://Scenes/level_1.tscn"]
+var levels = ["res://Scenes/levels/level_1.tscn"]
 
 var current_level = 0
 
