@@ -3,10 +3,10 @@ extends Node2D
 var characterBody: CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 
-@export var baseWalkSpeed: float = 300
+@export var baseWalkSpeed: float = 200
 @export var inertia: float = 0.85 ## [0-1): 0 is no inertia and 1 is no change
-@export var jumpImpulse: float = 400
-@export var wallJumpImpulse: Vector2 = Vector2(900, 300)
+@export var jumpImpulse: float = 330
+@export var wallJumpImpulse: Vector2 = Vector2(600, 200)
 var jumpsInARow: int = 0
 @export var maxJumpsInARow: int = 2
 @export var wallSlideVerticalCurbCurve: Curve
@@ -44,8 +44,7 @@ func _physics_process(delta: float) -> void:
 			characterBody.velocity = characterBody.get_gravity() * delta * wallSlideVerticalCurbCurve.sample(timeWallRiding / maxTimeWallRiding)
 		else:
 			applyNormalGravity(delta)
-		if (Input.is_action_just_pressed("Jump") && jumpsInARow < maxJumpsInARow && sign(horizontalDelta) != 0):
-			jumpsInARow += 1
+		if (Input.is_action_just_pressed("Jump") && sign(horizontalDelta) != 0):
 			characterBody.velocity.y = -wallJumpImpulse.y
 			characterBody.velocity.x -= wallJumpImpulse.x * sign(horizontalDelta)
 			if (sign(horizontalDelta)):
