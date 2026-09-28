@@ -67,7 +67,7 @@ func next_level():
 	current_level += 1
 	if (current_level >= len(levels)):
 		current_level = 0
-		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/game_win_screen.tscn")
 		return
 	get_tree().change_scene_to_file(levels[current_level])
 
