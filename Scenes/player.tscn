@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dt5u0rcl15igd" path="res://Scenes/playerUI/win_screen.tscn" id="9_gymyn"]
 [ext_resource type="Texture2D" uid="uid://bpu48iefgfkn" path="res://assets/art/Sprite Sheets/sunandmood-Sheet.png" id="10_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://p8alxb2ikaii" path="res://assets/art/Sprite Sheets/sunbutton-Sheet.png" id="11_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://b6w258bk20do5" path="res://assets/art/object_tiles.png" id="13_ukyrk"]
 
 [sub_resource type="Curve" id="Curve_6t5aa"]
 _data = [Vector2(0, 0.31622303), 0.0, 0.0023689577, 0, 0, Vector2(0.5099503, 0.52492607), 0.7065144, 0.7065144, 0, 0, Vector2(1, 1), 1.1039288, 0.0, 0, 0]
@@ -339,6 +340,28 @@ animations = [{
 "speed": 12.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ut0wq"]
+atlas = ExtResource("13_ukyrk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udxw8"]
+atlas = ExtResource("13_ukyrk")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_brn0f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ut0wq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udxw8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=1588156878 groups=["Player"]]
 z_index = 2
 scale = Vector2(0.8, 0.8)
@@ -389,3 +412,9 @@ sprite_frames = SubResource("SpriteFrames_wpjfl")
 position = Vector2(-207.5, 87.5)
 sprite_frames = SubResource("SpriteFrames_sbwqj")
 animation = &"NightSwap"
+
+[node name="MiniKey" type="AnimatedSprite2D" parent="." unique_id=765955817]
+visible = false
+position = Vector2(0, -26.25)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_brn0f")
