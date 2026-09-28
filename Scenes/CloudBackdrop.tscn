@@ -1,5 +1,6 @@
-[gd_scene format=3 uid="uid://cp0id6bncmy0u"]
+[gd_scene format=3 uid="uid://dv07s1xjqy0p7"]
 
+[ext_resource type="Script" uid="uid://cjfldlaw0gul4" path="res://Scenes/cloud_backdrop.gd" id="1_aoqta"]
 [ext_resource type="Texture2D" uid="uid://e250ucu61kkl" path="res://assets/art/Sprite Sheets/CloudSheet.png" id="1_w7xwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aoqta"]
@@ -35,6 +36,7 @@ sources/1 = SubResource("TileSetAtlasSource_aoqta")
 
 [node name="CloudBackdrop" type="Node2D" unique_id=47429626]
 z_index = -9
+script = ExtResource("1_aoqta")
 
 [node name="TileMap" type="TileMap" parent="." unique_id=1349350164]
 tile_set = SubResource("TileSet_17tu8")

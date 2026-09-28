@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d23yub70gobmn"]
 
 [ext_resource type="Texture2D" uid="uid://cubtokjs2aqrs" path="res://assets/art/WinScreen.png" id="1_u5wxy"]
+[ext_resource type="Theme" uid="uid://c0s2fsegqevro" path="res://assets/themes/game_over_theme.tres" id="1_wc5rd"]
 [ext_resource type="PackedScene" uid="uid://b5vw30libii87" path="res://Scenes/buttons/main_menu_button.tscn" id="2_wc5rd"]
 
 [node name="GameWinScreen" type="Control" unique_id=1880170462]
@@ -11,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_wc5rd")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=400308924]
 layout_mode = 0
@@ -62,7 +64,7 @@ autowrap_mode = 2
 
 [node name="MainMenuButton" parent="." unique_id=2134114912 instance=ExtResource("2_wc5rd")]
 layout_mode = 0
-offset_left = 157.0
+offset_left = 141.0
 offset_top = 287.0
-offset_right = 275.0
+offset_right = 301.0
 offset_bottom = 347.0
