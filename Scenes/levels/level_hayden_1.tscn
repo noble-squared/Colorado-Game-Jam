@@ -85,8 +85,8 @@ position = Vector2(472.00003, -566)
 scale = Vector2(0.515, 0.515)
 
 [node name="GetawayTruck" parent="." unique_id=868867607 instance=ExtResource("5_1gecp")]
-position = Vector2(-73, -16)
-scale = Vector2(1, 1)
+position = Vector2(-73, -10)
+scale = Vector2(0.8, 0.8)
 
 [node name="LeftWorldBoundary" type="StaticBody2D" parent="." unique_id=1035242529]
 position = Vector2(-145, 0)

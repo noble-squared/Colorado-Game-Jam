@@ -3,7 +3,7 @@ extends Node2D
 @export var type : Globals.States
 
 var blue = Color(0.322, 0.69, 0.925, 1.0)
-var black = Color(0.0, 0.0, 0.0, 1.0)
+var black = Color(0.145, 0.192, 0.463, 1.0)
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.connect("DaySwapped", _on_day_swapped)

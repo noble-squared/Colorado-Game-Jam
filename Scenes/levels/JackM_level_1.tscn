@@ -71,10 +71,11 @@ tile_map_data = PackedByteArray("AAD8/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD+/wEAAAAAAAA
 tile_set = SubResource("TileSet_wcvos")
 
 [node name="Player" parent="." unique_id=1588156878 instance=ExtResource("3_ch732")]
-position = Vector2(-24, -0.99999994)
+position = Vector2(-79, -2.9999998)
 
 [node name="GetawayTruck" parent="." unique_id=868867607 instance=ExtResource("5_253b1")]
-position = Vector2(-97, -12)
+position = Vector2(-84, -10)
+scale = Vector2(0.8, 0.8)
 
 [node name="LeftWorldBoundary" type="StaticBody2D" parent="." unique_id=1035242529]
 position = Vector2(-145, 0)
