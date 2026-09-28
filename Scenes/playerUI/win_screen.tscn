@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bfebdm5v7nnsc" path="res://Scenes/buttons/restart_level_button.tscn" id="1_a00f1"]
 [ext_resource type="Script" uid="uid://dvfj1l6yskakf" path="res://Scripts/win_screen.gd" id="1_kgbfu"]
 [ext_resource type="Script" uid="uid://bfsob8g8xc4ta" path="res://Scripts/next_button.gd" id="2_awi1s"]
-[ext_resource type="Script" path="res://Scripts/main_menu_button.gd" id="4_fqll3"]
+[ext_resource type="Script" uid="uid://bsjak8ol6q32a" path="res://Scripts/main_menu_button.gd" id="4_fqll3"]
 
 [node name="WinScreen" type="Control" unique_id=1889581568]
 process_mode = 3
@@ -60,3 +60,4 @@ text = "Main menu"
 script = ExtResource("4_fqll3")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Button" to="VBoxContainer/HBoxContainer/Button" method="_on_pressed"]
