@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="3_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dol0a51giqtfq" path="res://Scenes/getaway_truck.tscn" id="4_7p6j4"]
 [ext_resource type="Script" uid="uid://cd3sl60rk6ihg" path="res://Scripts/level_1_text.gd" id="5_6444e"]
+[ext_resource type="PackedScene" uid="uid://devv5sj3bpqso" path="res://Scenes/background.tscn" id="6_qyddi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6444e"]
 texture = ExtResource("2_xfk5q")
@@ -52,6 +53,9 @@ sources/0 = SubResource("TileSetAtlasSource_6444e")
 size = Vector2(29, 58)
 
 [node name="Level 1" type="Node2D" unique_id=536481112]
+
+[node name="Background" parent="." unique_id=288593620 instance=ExtResource("6_qyddi")]
+position = Vector2(-112, 131)
 
 [node name="Player" parent="." unique_id=1588156878 instance=ExtResource("1_vk57k")]
 
