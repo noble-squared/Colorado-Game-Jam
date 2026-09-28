@@ -48,7 +48,7 @@ layout_mode = 2
 
 [node name="NextButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1492722035]
 layout_mode = 2
-text = "Next (No work :( )"
+text = "Next Level"
 script = ExtResource("2_awi1s")
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]

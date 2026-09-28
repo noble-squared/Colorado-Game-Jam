@@ -1,10 +1,12 @@
-[gd_scene format=4 uid="uid://dmci5dcka150t"]
+[gd_scene format=4 uid="uid://bv30l0k618ci0"]
 
+[ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_qek6e"]
 [ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="1_vk57k"]
 [ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="2_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="3_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://dol0a51giqtfq" path="res://Scenes/getaway_truck.tscn" id="4_7p6j4"]
 [ext_resource type="Script" uid="uid://cd3sl60rk6ihg" path="res://Scripts/level_1_text.gd" id="5_6444e"]
+[ext_resource type="PackedScene" uid="uid://devv5sj3bpqso" path="res://Scenes/background.tscn" id="6_qyddi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6444e"]
 texture = ExtResource("2_xfk5q")
@@ -52,6 +54,7 @@ sources/0 = SubResource("TileSetAtlasSource_6444e")
 size = Vector2(29, 58)
 
 [node name="Level 1" type="Node2D" unique_id=536481112]
+script = ExtResource("1_qek6e")
 
 [node name="Player" parent="." unique_id=1588156878 instance=ExtResource("1_vk57k")]
 
@@ -101,5 +104,7 @@ offset_bottom = -44.0
 theme_override_font_sizes/font_size = 14
 text = "You Can Only Grab the 
 Gem if it is Night"
+
+[node name="Background" parent="." unique_id=288593620 instance=ExtResource("6_qyddi")]
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

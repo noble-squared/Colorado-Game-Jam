@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://gldkv0xe1uyc"]
+[gd_scene format=3 uid="uid://ct5ajy8py86rl"]
 
-[ext_resource type="Script" uid="uid://ipyxsm3pqh1q" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://dadso51vpxcwh" path="res://Scenes/buttons/level_select_button.tscn" id="2_1ehe0"]
 [ext_resource type="PackedScene" uid="uid://c2qh6v3t7l755" path="res://Scenes/buttons/quit_button.tscn" id="3_ce3w2"]
 
@@ -38,28 +38,36 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=144758199]
 layout_mode = 2
-text = "Main Menu"
+theme_override_font_sizes/font_size = 49
+text = "Swap Thief"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer" unique_id=582848502]
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" unique_id=1479397035]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer" unique_id=582848502]
 layout_mode = 2
 columns = 3
 
-[node name="Level1SelectButton" parent="VBoxContainer/GridContainer" unique_id=1272142489 instance=ExtResource("2_1ehe0")]
+[node name="Level1SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1272142489 instance=ExtResource("2_1ehe0")]
 layout_mode = 2
 text = "Level 1"
-level = "game"
+level = "level_1"
 
-[node name="Level2SelectButton" parent="VBoxContainer/GridContainer" unique_id=1806768087 instance=ExtResource("2_1ehe0")]
+[node name="Level2SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1806768087 instance=ExtResource("2_1ehe0")]
 layout_mode = 2
 text = "Level 2"
-level = "playerMovementTestScene"
+level = "JackM_level_1"
+levelIndex = 1
 
-[node name="Level3SelectButton" parent="VBoxContainer/GridContainer" unique_id=2096887483 instance=ExtResource("2_1ehe0")]
+[node name="Level3SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=2096887483 instance=ExtResource("2_1ehe0")]
 layout_mode = 2
 text = "Level 3"
+level = "level_hayden_1"
+levelIndex = 2
 
-[node name="Level4SelectButton" parent="VBoxContainer/GridContainer" unique_id=714221603 instance=ExtResource("2_1ehe0")]
+[node name="Level4SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=714221603 instance=ExtResource("2_1ehe0")]
+visible = false
 layout_mode = 2
 text = "Level 4"
 

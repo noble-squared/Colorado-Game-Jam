@@ -1,4 +1,5 @@
 extends Node2D
+class_name Level
 
 @export var maxJumpsBeforeGem: int = -1
 var gotGem: bool = false

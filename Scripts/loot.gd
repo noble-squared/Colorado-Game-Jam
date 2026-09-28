@@ -17,7 +17,8 @@ func _on_body_entered(body: Node2D) -> void:
 			#print("loot grabbed")
 			body.set_meta("has_loot", true)
 			for child in get_tree().root.get_children():
-				if (child != Globals):
+				if (child is Level):
+					print(child.name)
 					child.gotGem = true
 					break
 			reparent.call_deferred(body)
