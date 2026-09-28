@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ipyxsm3pqh1q" path="res://Scripts/main_menu.gd" id="1_28flt"]
 [ext_resource type="PackedScene" uid="uid://dadso51vpxcwh" path="res://Scenes/buttons/level_select_button.tscn" id="2_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://blxmxd040i82o" path="res://assets/art/Title-frame0.png" id="2_ce3w2"]
 [ext_resource type="PackedScene" uid="uid://c2qh6v3t7l755" path="res://Scenes/buttons/quit_button.tscn" id="3_ce3w2"]
 
 [node name="MainMenu" type="Control" unique_id=223779711]
@@ -37,11 +38,11 @@ offset_bottom = 46.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="VBoxContainer" unique_id=144758199]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer" unique_id=1645230861]
 layout_mode = 2
-theme_override_font_sizes/font_size = 49
-text = "Swap Thief"
-horizontal_alignment = 1
+texture = ExtResource("2_ce3w2")
+expand_mode = 5
+stretch_mode = 5
 
 [node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" unique_id=1479397035]
 layout_mode = 2
