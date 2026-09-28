@@ -5,9 +5,13 @@ extends Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.loadGame()
 	if !level: level = "res://Scenes/main_menu.tscn"
 	else: 
 		level = "res://Scenes/levels/" + level + ".tscn"
+	if (levelIndex > Globals.highestUnlockedLevel):
+		disabled = true
+		text = "Locked"
 
 
 func _on_pressed() -> void:
