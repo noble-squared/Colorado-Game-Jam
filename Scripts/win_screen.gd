@@ -5,6 +5,7 @@ func _ready() -> void:
 
 func win():
 	visible = true
+	Globals.playSound("win")
 	get_tree().paused = true
 
 

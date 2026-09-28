@@ -8,15 +8,16 @@ var levels = [
 
 var current_level = 0
 
-var sounds: Dictionary[String, String] = {
-	"lose": "res://assets/sounds/prison-cell-door.mp3",
-	"rewind": "res://assets/sounds/tape-rewind.mp3"
+var sounds: Dictionary[String, Array] = {
+	"lose": ["res://assets/sounds/prison-cell-door.mp3", 0],
+	"rewind": ["res://assets/sounds/tape-rewind.mp3", 0],
+	"win": ["res://assets/sounds/truck-engine-start.mp3", -4]
 }
 
 var loadedSounds: Dictionary[String, AudioStreamPlayer2D] = {}
 
-var music: Dictionary[String, String] = {
-	"main": "res://assets/sounds/MainLevelTheme.mp3"
+var music: Dictionary[String, Array] = {
+	"main": ["res://assets/sounds/MainLevelTheme.mp3", -5]
 }
 
 var loadedMusic: Dictionary[String, AudioStreamPlayer2D] = {}
@@ -39,7 +40,8 @@ func _ready() -> void:
 	for sound in sounds.keys():
 		var player = AudioStreamPlayer2D.new()
 		print("Loading sound: " + sound)
-		player.stream = AudioStreamMP3.load_from_file(sounds[sound])
+		player.stream = AudioStreamMP3.load_from_file(sounds[sound][0])
+		player.volume_db = sounds[sound][1]
 		add_child(player)
 		player.process_mode = Node.PROCESS_MODE_ALWAYS
 		loadedSounds[sound] = player
@@ -47,7 +49,8 @@ func _ready() -> void:
 	for song in music.keys():
 		var player = AudioStreamPlayer2D.new()
 		print("Loading sound: " + song)
-		player.stream = AudioStreamMP3.load_from_file(music[song])
+		player.stream = AudioStreamMP3.load_from_file(music[song][0])
+		player.volume_db = music[song][1]
 		add_child(player)
 		loadedMusic[song] = player
 		
@@ -69,6 +72,7 @@ func next_level():
 	get_tree().change_scene_to_file(levels[current_level])
 
 func swapState():
+	playSound("rewind", .34, 1.25)
 	times_swapped += 1
 	if current_state == States.NIGHT:
 		current_state = States.DAY
@@ -89,10 +93,13 @@ func playClickSFX():
 	clickSFX.pitch_scale = randf_range(0.8,1.2)
 	clickSFX.play()
 
-func playSound(soundname: String, time: float = 0):
+func playSound(soundname: String, time: float = 0, maxTime: float = 0):
 	if (soundname in loadedSounds.keys()):
 		print("Playing sound: " + soundname)
+		loadedSounds[soundname].pitch_scale = randf_range(0.8,1.2)
 		loadedSounds[soundname].play(time)
+		if (maxTime != 0):
+			get_tree().create_timer(maxTime - time).timeout.connect(func(): loadedSounds[soundname].stop())
 	else:
 		push_warning("Attempt to play non-loaded sound: " + soundname)
 
