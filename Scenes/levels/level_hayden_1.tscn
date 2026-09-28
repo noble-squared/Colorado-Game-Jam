@@ -66,7 +66,7 @@ _data = {
 }
 point_count = 3
 
-[node name="Game" type="Node2D" unique_id=333900588]
+[node name="Game2" type="Node2D" unique_id=333900588]
 script = ExtResource("1_gc8dj")
 
 [node name="Background" parent="." unique_id=288593620 instance=ExtResource("2_nywdt")]
