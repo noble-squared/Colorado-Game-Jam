@@ -108,6 +108,4 @@ theme_override_font_sizes/font_size = 14
 text = "You Can Only Grab the 
 Gem if it is Night"
 
-[node name="Background" parent="." unique_id=288593620 instance=ExtResource("6_qyddi")]
-
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
