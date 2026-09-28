@@ -4,6 +4,7 @@ extends Area2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var rng = RandomNumberGenerator.new()
+var downwardOffset: int = 26
 
 func _ready():
 	Globals.connect("DaySwapped", _on_day_swapped)
@@ -17,21 +18,25 @@ func _on_body_entered(body: Node2D) -> void:
 			#print("loot grabbed")
 			body.set_meta("has_loot", true)
 			for child in get_tree().root.get_children():
-				if (child != Globals):
+				if (child is Level):
+					print(child.name)
 					child.gotGem = true
 					break
 			reparent.call_deferred(body)
 			set_deferred("position",Vector2(0,-25))
+			animated_sprite_2d.play("bag") # TBD See if we want to keep
 			collision_shape_2d.set_deferred("disabled",true)
 		
 		
 		
 func _on_day_swapped():
-	get_tree().get_first_node_in_group("Player").set_meta("has_loot", false)
-	var new_position = global_position
-	reparent(get_tree().root)
-	global_position = new_position
-	
-	await get_tree().create_timer(1).timeout
-	collision_shape_2d.disabled = false
+	if (get_tree().get_first_node_in_group("Player").get_meta("has_loot", false)):
+		get_tree().get_first_node_in_group("Player").set_meta("has_loot", false)
+		var new_position = global_position
+		reparent(get_tree().root)
+		global_position = new_position - Vector2(0, -downwardOffset)
+		
+		#await get_tree().create_timer(1).timeout
+		#collision_shape_2d.disabled = false
+		collision_shape_2d.set_deferred("disabled", false)
 	

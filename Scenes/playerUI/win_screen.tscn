@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bfebdm5v7nnsc" path="res://Scenes/buttons/restart_level_button.tscn" id="1_a00f1"]
 [ext_resource type="Script" uid="uid://dvfj1l6yskakf" path="res://Scripts/win_screen.gd" id="1_kgbfu"]
 [ext_resource type="Script" uid="uid://bfsob8g8xc4ta" path="res://Scripts/next_button.gd" id="2_awi1s"]
+[ext_resource type="Script" uid="uid://bsjak8ol6q32a" path="res://Scripts/main_menu_button.gd" id="4_fqll3"]
 
 [node name="WinScreen" type="Control" unique_id=1889581568]
 process_mode = 3
@@ -39,6 +40,8 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=605053055]
 layout_mode = 2
+text = "You got the gem!"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=774400194]
 layout_mode = 2
@@ -48,7 +51,13 @@ layout_mode = 2
 
 [node name="NextButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1492722035]
 layout_mode = 2
-text = "Next (No work :( )"
+text = "Next Level"
 script = ExtResource("2_awi1s")
 
+[node name="MenuButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1697729645]
+layout_mode = 2
+text = "Main menu"
+script = ExtResource("4_fqll3")
+
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/MenuButton" to="VBoxContainer/HBoxContainer/MenuButton" method="_on_pressed"]

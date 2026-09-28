@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://devv5sj3bpqso"]
 
-[ext_resource type="Script" uid="uid://k3epy88iw8wt" path="res://Scenes/background.gd" id="1_sn1xx"]
+[ext_resource type="Script" uid="uid://k3epy88iw8wt" path="res://Scripts/background.gd" id="1_sn1xx"]
 
 [node name="Background" type="Node2D" unique_id=288593620]
 z_index = -10

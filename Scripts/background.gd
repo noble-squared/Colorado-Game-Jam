@@ -4,6 +4,7 @@ extends Node2D
 
 var blue = Color(0.322, 0.69, 0.925, 1.0)
 var darkPurple = Color(0.118, 0.118, 0.392, 1.0)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.connect("DaySwapped", _on_day_swapped)

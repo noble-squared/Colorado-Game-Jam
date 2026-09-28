@@ -1,6 +1,10 @@
 extends Node
 
-var levels = ["res://Scenes/levels/level_1.tscn"]
+var levels = [
+	"res://Scenes/levels/level_1.tscn",
+	"res://Scenes/levels/JackM_level_1.tscn",
+	"res://Scenes/levels/level_hayden_1.tscn",
+]
 
 var current_level = 0
 
@@ -26,7 +30,11 @@ func _process(_delta: float) -> void:
 
 func next_level():
 	current_level += 1
-	get_tree().current_scene = levels[current_level]
+	if (current_level >= len(levels)):
+		current_level = 0
+		get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+		return
+	get_tree().change_scene_to_file(levels[current_level])
 
 func swapState():
 	times_swapped += 1
