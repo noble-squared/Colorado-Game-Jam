@@ -15,6 +15,14 @@ var sounds: Dictionary[String, String] = {
 
 var loadedSounds: Dictionary[String, AudioStreamPlayer2D] = {}
 
+var music: Dictionary[String, String] = {
+	"main": "res://assets/sounds/MainLevelTheme.mp3"
+}
+
+var loadedMusic: Dictionary[String, AudioStreamPlayer2D] = {}
+
+var currSong: String = ""
+
 enum States {NIGHT, DAY}
 
 var current_state
@@ -35,6 +43,13 @@ func _ready() -> void:
 		add_child(player)
 		player.process_mode = Node.PROCESS_MODE_ALWAYS
 		loadedSounds[sound] = player
+	
+	for song in music.keys():
+		var player = AudioStreamPlayer2D.new()
+		print("Loading sound: " + song)
+		player.stream = AudioStreamMP3.load_from_file(music[song])
+		add_child(player)
+		loadedMusic[song] = player
 		
 	clickSFX = AudioStreamPlayer2D.new()
 	clickSFX.stream = AudioStreamMP3.load_from_file("res://assets/sounds/click.mp3")
@@ -75,8 +90,22 @@ func playClickSFX():
 	clickSFX.play()
 
 func playSound(soundname: String, time: float = 0):
-	if (soundname in loadedSounds):
+	if (soundname in loadedSounds.keys()):
 		print("Playing sound: " + soundname)
 		loadedSounds[soundname].play(time)
 	else:
 		push_warning("Attempt to play non-loaded sound: " + soundname)
+
+func playMusic(songName: String):
+	stopMusic()
+	if (songName in loadedMusic.keys()):
+		print("Playing song: " + songName)
+		loadedMusic[songName].play()
+		currSong = songName
+	else:
+		push_warning("Attempt to play non-loaded song: " + songName)
+
+func stopMusic():
+	if (currSong):
+		loadedMusic[currSong].stop()
+		currSong = ""

@@ -10,6 +10,7 @@ func _ready() -> void:
 	Globals.connect("DaySwapped", _on_day_swapped)
 	Globals.connect("NightSwapped", _on_night_swapped)
 	Globals.setDayNight(Globals.States.DAY)
+	Globals.playMusic("main")
 	get_tree().paused = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
