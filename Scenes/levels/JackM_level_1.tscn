@@ -73,10 +73,6 @@ tile_set = SubResource("TileSet_wcvos")
 [node name="Player" parent="." unique_id=1588156878 instance=ExtResource("3_ch732")]
 position = Vector2(-24, -0.99999994)
 
-[node name="Loot" parent="." unique_id=213962639 instance=ExtResource("4_4c1wq")]
-position = Vector2(392, -6)
-scale = Vector2(0.515, 0.515)
-
 [node name="GetawayTruck" parent="." unique_id=868867607 instance=ExtResource("5_253b1")]
 position = Vector2(-97, -12)
 
