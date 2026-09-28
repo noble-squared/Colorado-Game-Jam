@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://u3e7ercfib6i" path="res://assets/art/Sprite Sheets/City.png" id="1_3rfro"]
 [ext_resource type="PackedScene" uid="uid://devv5sj3bpqso" path="res://Scenes/background.tscn" id="2_jb88n"]
+[ext_resource type="PackedScene" path="res://Scenes/CloudBackdrop.tscn" id="3_uib18"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jb88n"]
 texture = ExtResource("1_3rfro")
@@ -27,3 +28,6 @@ tile_set = SubResource("TileSet_uib18")
 modulate = Color(1, 1, 1, 0.2901961)
 self_modulate = Color(1, 1, 1, 0.039215688)
 z_index = 0
+
+[node name="CloudBackdrop" parent="Parallax2D" unique_id=47429626 instance=ExtResource("3_uib18")]
+position = Vector2(-550, -211)
