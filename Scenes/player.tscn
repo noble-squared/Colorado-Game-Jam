@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dt5u0rcl15igd" path="res://Scenes/playerUI/win_screen.tscn" id="9_gymyn"]
 [ext_resource type="Texture2D" uid="uid://bpu48iefgfkn" path="res://assets/art/Sprite Sheets/sunandmood-Sheet.png" id="10_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://p8alxb2ikaii" path="res://assets/art/Sprite Sheets/sunbutton-Sheet.png" id="11_ukyrk"]
+[ext_resource type="AudioStream" uid="uid://dlctc411voer4" path="res://assets/sounds/footsteps-stone.mp3" id="13_ukyrk"]
 
 [sub_resource type="Curve" id="Curve_6t5aa"]
 _data = [Vector2(0, 0.31622303), 0.0, 0.0023689577, 0, 0, Vector2(0.5099503, 0.52492607), 0.7065144, 0.7065144, 0, 0, Vector2(1, 1), 1.1039288, 0.0, 0, 0]
@@ -389,3 +390,11 @@ sprite_frames = SubResource("SpriteFrames_wpjfl")
 position = Vector2(-207.5, 87.5)
 sprite_frames = SubResource("SpriteFrames_sbwqj")
 animation = &"NightSwap"
+
+[node name="AudioPlayers" type="Node2D" parent="." unique_id=904694725]
+
+[node name="FootstepPlayer1" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=656877749]
+scale = Vector2(0.99999994, 0.99999994)
+stream = ExtResource("13_ukyrk")
+volume_db = -5.0
+pitch_scale = 1.5

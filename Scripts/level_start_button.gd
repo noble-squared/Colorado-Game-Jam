@@ -12,5 +12,6 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	print(level)
+	Globals.playClickSFX()
 	Globals.current_level = levelIndex
 	get_tree().change_scene_to_file(level)
