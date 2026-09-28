@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cp0id6bncmy0u"]
+
+[ext_resource type="Texture2D" uid="uid://e250ucu61kkl" path="res://assets/art/Sprite Sheets/CloudSheet.png" id="1_w7xwb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aoqta"]
+texture = ExtResource("1_w7xwb")
+texture_region_size = Vector2i(512, 512)
+use_texture_padding = false
+0:0/animation_columns = 5
+0:0/animation_speed = 0.5
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/animation_frame_2/duration = 1.0
+0:0/animation_frame_3/duration = 1.0
+0:0/animation_frame_4/duration = 1.0
+0:0/animation_frame_5/duration = 1.0
+0:0/animation_frame_6/duration = 1.0
+0:0/animation_frame_7/duration = 1.0
+0:0/animation_frame_8/duration = 1.0
+0:0/animation_frame_9/duration = 1.0
+0:0/animation_frame_10/duration = 1.0
+0:0/animation_frame_11/duration = 1.0
+0:0/animation_frame_12/duration = 1.0
+0:0/animation_frame_13/duration = 1.0
+0:0/animation_frame_14/duration = 1.0
+0:0/animation_frame_15/duration = 1.0
+0:0/animation_frame_16/duration = 1.0
+0:0/animation_frame_17/duration = 1.0
+0:0/animation_frame_18/duration = 1.0
+0:0/animation_frame_19/duration = 1.0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_17tu8"]
+sources/1 = SubResource("TileSetAtlasSource_aoqta")
+
+[node name="CloudBackdrop" type="Node2D" unique_id=47429626]
+z_index = -9
+
+[node name="TileMap" type="TileMap" parent="." unique_id=1349350164]
+tile_set = SubResource("TileSet_17tu8")
+rendering_quadrant_size = 128
+format = 2
+layer_0/tile_data = PackedInt32Array(65538, 1, 0, 65570, 1, 0, 65602, 1, 0, 131042, 1, 0, 65634, 1, 0, -1966110, 1, 0, -2031614, 1, 0, -2031582, 1, 0, -2031550, 1, 0, -2031518, 1, 0)
