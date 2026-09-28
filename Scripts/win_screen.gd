@@ -9,5 +9,6 @@ func win():
 
 
 func _on_next_button_pressed() -> void:
+	Globals.playClickSFX()
 	print("button Pressed")
 	Globals.next_level()

@@ -8,11 +8,18 @@ var levels = [
 
 var current_level = 0
 
+var sounds: Dictionary[String, String] = {
+	"lose": "res://assets/sounds/prison-cell-door.mp3",
+	"rewind": "res://assets/sounds/tape-rewind.mp3"
+}
+
+var loadedSounds: Dictionary[String, AudioStreamPlayer2D] = {}
 
 enum States {NIGHT, DAY}
 
 var current_state
 var times_swapped: int = 0
+var clickSFX: AudioStreamPlayer2D
 
 signal NightSwapped
 signal DaySwapped
@@ -21,7 +28,17 @@ signal DaySwapped
 func _ready() -> void:
 	current_state = States.DAY
 	DaySwapped.emit()
-
+	for sound in sounds.keys():
+		var player = AudioStreamPlayer2D.new()
+		print("Loading sound: " + sound)
+		player.stream = AudioStreamMP3.load_from_file(sounds[sound])
+		add_child(player)
+		player.process_mode = Node.PROCESS_MODE_ALWAYS
+		loadedSounds[sound] = player
+		
+	clickSFX = AudioStreamPlayer2D.new()
+	clickSFX.stream = AudioStreamMP3.load_from_file("res://assets/sounds/click.mp3")
+	add_child(clickSFX)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -52,3 +69,14 @@ func setDayNight(targetState: States):
 			DaySwapped.emit()
 		else:
 			NightSwapped.emit()
+
+func playClickSFX():
+	clickSFX.pitch_scale = randf_range(0.8,1.2)
+	clickSFX.play()
+
+func playSound(soundname: String, time: float = 0):
+	if (soundname in loadedSounds):
+		print("Playing sound: " + soundname)
+		loadedSounds[soundname].play(time)
+	else:
+		push_warning("Attempt to play non-loaded sound: " + soundname)

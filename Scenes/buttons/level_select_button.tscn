@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dadso51vpxcwh"]
 
-[ext_resource type="Script" uid="uid://bl3b6kty7iphw" path="res://scripts/level_start_button.gd" id="1_k1syi"]
+[ext_resource type="Script" uid="uid://bl3b6kty7iphw" path="res://Scripts/level_start_button.gd" id="1_k1syi"]
 
 [node name="LevelSelectButton" type="Button" unique_id=1272142489]
 offset_right = 8.0
