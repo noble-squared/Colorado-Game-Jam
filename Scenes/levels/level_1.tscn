@@ -56,6 +56,9 @@ size = Vector2(29, 58)
 [node name="Level 1" type="Node2D" unique_id=536481112]
 script = ExtResource("1_qek6e")
 
+[node name="Background" parent="." unique_id=288593620 instance=ExtResource("6_qyddi")]
+position = Vector2(-112, 131)
+
 [node name="Player" parent="." unique_id=1588156878 instance=ExtResource("1_vk57k")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1178095831]
