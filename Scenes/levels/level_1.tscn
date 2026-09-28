@@ -68,6 +68,7 @@ script = ExtResource("1_qek6e")
 position = Vector2(-112, 131)
 
 [node name="Player" parent="." unique_id=1588156878 instance=ExtResource("1_vk57k")]
+position = Vector2(-119.99999, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1178095831]
 position = Vector2(1, 0)

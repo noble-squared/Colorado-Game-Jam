@@ -69,11 +69,11 @@ func setDisabled(value: bool):
 	disabled = value
 	visible = not value
 	if (value):
-		monitoring = false
 		for body in get_overlapping_bodies():
 			if (body is CharacterBody2D):
 				var playerHealthNode = body.find_child("PlayerHealth")
 				if (playerHealthNode):
 					playerHealthNode.isSpotted = false
+		monitoring = false
 	else:
 		monitoring = true
