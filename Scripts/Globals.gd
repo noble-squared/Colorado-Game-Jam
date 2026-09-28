@@ -7,6 +7,7 @@ var levels = [
 ]
 
 var current_level = 0
+var highestUnlockedLevel = 0
 
 var sounds: Dictionary[String, Array] = {
 	"lose": ["res://assets/sounds/prison-cell-door.mp3", 0],
@@ -24,6 +25,8 @@ var loadedMusic: Dictionary[String, AudioStreamPlayer2D] = {}
 
 var currSong: String = ""
 
+var debugMode: bool = false
+
 enum States {NIGHT, DAY}
 
 var current_state
@@ -35,6 +38,8 @@ signal DaySwapped
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if (debugMode):
+		highestUnlockedLevel = len(levels)
 	current_state = States.DAY
 	DaySwapped.emit()
 	for sound in sounds.keys():
@@ -116,3 +121,16 @@ func stopMusic():
 	if (currSong):
 		loadedMusic[currSong].stop()
 		currSong = ""
+
+func saveGame():
+	if (debugMode): return
+	var save_file = FileAccess.open("user://savegame.txt", FileAccess.WRITE)
+	save_file.store_line(str(highestUnlockedLevel))
+
+func loadGame():
+	if (debugMode): return len(levels)
+	var save_file = FileAccess.open("user://savegame.txt", FileAccess.READ)
+	if (not save_file):
+		highestUnlockedLevel = 0
+	else:
+		highestUnlockedLevel = save_file.get_line().to_int()
