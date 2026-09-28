@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dol0a51giqtfq" path="res://Scenes/getaway_truck.tscn" id="4_7p6j4"]
 [ext_resource type="Script" uid="uid://cd3sl60rk6ihg" path="res://Scripts/level_1_text.gd" id="5_6444e"]
 [ext_resource type="PackedScene" uid="uid://devv5sj3bpqso" path="res://Scenes/background.tscn" id="6_qyddi"]
+[ext_resource type="PackedScene" uid="uid://cp0id6bncmy0u" path="res://Scenes/CloudBackdrop.tscn" id="8_tlryv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6444e"]
 texture = ExtResource("2_xfk5q")
@@ -125,5 +126,8 @@ position = Vector2(-191, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWorldBoundary" unique_id=2067069621]
 shape = SubResource("WorldBoundaryShape2D_qek6e")
+
+[node name="CloudBackdrop" parent="." unique_id=47429626 instance=ExtResource("8_tlryv")]
+position = Vector2(-424, -17)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

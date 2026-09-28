@@ -5,11 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_nywdt"]
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_p107r"]
 [ext_resource type="PackedScene" uid="uid://dol0a51giqtfq" path="res://Scenes/getaway_truck.tscn" id="5_1gecp"]
-[ext_resource type="PackedScene" path="res://Scenes/street_light.tscn" id="6_3hopc"]
+[ext_resource type="PackedScene" uid="uid://btbyejebdjwdy" path="res://Scenes/street_light.tscn" id="6_3hopc"]
 [ext_resource type="PackedScene" uid="uid://x6bo71sn0vlp" path="res://Scenes/platform.tscn" id="7_yt7vi"]
 [ext_resource type="PackedScene" uid="uid://ddfmdwr4w2hln" path="res://Scenes/guard.tscn" id="8_e346s"]
 [ext_resource type="PackedScene" uid="uid://5xetlc2tbsu8" path="res://Scenes/spotlight.tscn" id="9_nhyx8"]
 [ext_resource type="PackedScene" uid="uid://devv5sj3bpqso" path="res://Scenes/background.tscn" id="10_gvvke"]
+[ext_resource type="PackedScene" uid="uid://cp0id6bncmy0u" path="res://Scenes/CloudBackdrop.tscn" id="11_nywdt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e657c"]
 texture = ExtResource("2_gvvke")
@@ -172,6 +173,9 @@ enabled = true
 [node name="DisabledLayer" parent="DayPlatform" index="2" unique_id=537860606]
 visible = true
 tile_map_data = PackedByteArray("AAAlAN7/AgADAAEAACAmAN7/AgACAAEAACAkAN7/AgACAAEAADA=")
+
+[node name="CloudBackdrop" parent="." unique_id=47429626 instance=ExtResource("11_nywdt")]
+position = Vector2(-398, -53)
 
 [editable path="NightPlatform"]
 [editable path="DayPlatform"]

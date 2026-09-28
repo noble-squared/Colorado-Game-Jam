@@ -6,10 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_8ok1i"]
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_ljbgv"]
 [ext_resource type="PackedScene" uid="uid://dol0a51giqtfq" path="res://Scenes/getaway_truck.tscn" id="5_17iy3"]
-[ext_resource type="PackedScene" path="res://Scenes/street_light.tscn" id="6_8ok1i"]
+[ext_resource type="PackedScene" uid="uid://btbyejebdjwdy" path="res://Scenes/street_light.tscn" id="6_8ok1i"]
 [ext_resource type="PackedScene" uid="uid://x6bo71sn0vlp" path="res://Scenes/platform.tscn" id="7_ljbgv"]
 [ext_resource type="PackedScene" uid="uid://ddfmdwr4w2hln" path="res://Scenes/guard.tscn" id="8_ljbgv"]
 [ext_resource type="PackedScene" uid="uid://5xetlc2tbsu8" path="res://Scenes/spotlight.tscn" id="9_17iy3"]
+[ext_resource type="PackedScene" uid="uid://cp0id6bncmy0u" path="res://Scenes/CloudBackdrop.tscn" id="11_wcvos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e657c"]
 texture = ExtResource("2_oih13")
@@ -107,3 +108,6 @@ curve = SubResource("Curve2D_e657c")
 [node name="PathFollow2D" type="PathFollow2D" parent="SpotlightPath" unique_id=1216081325]
 position = Vector2(256, -128)
 rotation = -1.5707964
+
+[node name="CloudBackdrop" parent="." unique_id=47429626 instance=ExtResource("11_wcvos")]
+position = Vector2(-539, -20)

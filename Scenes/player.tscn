@@ -161,7 +161,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Wall Slide",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -365,8 +365,7 @@ zoom = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_pu2lt")
 animation = &"Wall Slide"
 autoplay = "default"
-frame = 4
-frame_progress = 0.85994726
+frame_progress = 0.9292582
 offset = Vector2(4, 0)
 
 [node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=541839562]
