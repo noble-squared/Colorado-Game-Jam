@@ -9,19 +9,21 @@ var levels = [
 var current_level = 0
 var highestUnlockedLevel = 0
 
+# Resource path, then decibels
 var sounds: Dictionary[String, Array] = {
 	"lose": ["res://assets/sounds/prison-cell-door.mp3", 0],
 	"rewind": ["res://assets/sounds/tape-rewind.mp3", 0],
-	"win": ["res://assets/sounds/truck-engine-start.mp3", -4]
+	"win": ["res://assets/sounds/truck-engine-start.mp3", -4],
+	"jump": ["res://assets/sounds/grunt_2_processed.mp3", 0]
 }
 
-var loadedSounds: Dictionary[String, AudioStreamPlayer2D] = {}
+var loadedSounds: Dictionary[String, AudioStreamPlayer] = {}
 
 var music: Dictionary[String, Array] = {
 	"main": ["res://assets/sounds/MainLevelTheme.mp3", -5]
 }
 
-var loadedMusic: Dictionary[String, AudioStreamPlayer2D] = {}
+var loadedMusic: Dictionary[String, AudioStreamPlayer] = {}
 
 var currSong: String = ""
 
@@ -31,7 +33,8 @@ enum States {NIGHT, DAY}
 
 var current_state
 var times_swapped: int = 0
-var clickSFX: AudioStreamPlayer2D
+var clickSFX: AudioStreamPlayer
+var swappingDisabled: bool = false
 
 signal NightSwapped
 signal DaySwapped
@@ -43,7 +46,7 @@ func _ready() -> void:
 	current_state = States.DAY
 	DaySwapped.emit()
 	for sound in sounds.keys():
-		var player = AudioStreamPlayer2D.new()
+		var player = AudioStreamPlayer.new()
 		print("Loading sound: " + sound)
 		player.stream = AudioStreamMP3.load_from_file(sounds[sound][0])
 		player.volume_db = sounds[sound][1]
@@ -52,20 +55,20 @@ func _ready() -> void:
 		loadedSounds[sound] = player
 	
 	for song in music.keys():
-		var player = AudioStreamPlayer2D.new()
+		var player = AudioStreamPlayer.new()
 		print("Loading sound: " + song)
 		player.stream = AudioStreamMP3.load_from_file(music[song][0])
 		player.volume_db = music[song][1]
 		add_child(player)
 		loadedMusic[song] = player
 		
-	clickSFX = AudioStreamPlayer2D.new()
+	clickSFX = AudioStreamPlayer.new()
 	clickSFX.stream = AudioStreamMP3.load_from_file("res://assets/sounds/click.mp3")
 	add_child(clickSFX)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("SwapTime"):
+	if Input.is_action_just_pressed("SwapTime") and not swappingDisabled:
 		swapState()
 
 func next_level():

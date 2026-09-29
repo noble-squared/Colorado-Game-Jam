@@ -13,8 +13,10 @@ func _process(delta: float) -> void:
 
 func toggle_pause():
 	if get_tree().paused:
+		Globals.swappingDisabled = false
 		unpause()
 	else: 
+		Globals.swappingDisabled = true
 		pause()
 
 func unpause():

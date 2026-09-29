@@ -7,6 +7,7 @@ var gotGem: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.swappingDisabled = false
 	Globals.connect("DaySwapped", _on_day_swapped)
 	Globals.connect("NightSwapped", _on_night_swapped)
 	Globals.setDayNight(Globals.States.DAY)
