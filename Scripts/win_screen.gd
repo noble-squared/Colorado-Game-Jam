@@ -3,7 +3,9 @@ extends Control
 func _ready() -> void:
 	visible = false
 
+
 func win():
+	
 	visible = true
 	Globals.playSound("win")
 	if (Globals.highestUnlockedLevel == Globals.current_level):

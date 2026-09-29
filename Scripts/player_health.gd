@@ -21,4 +21,5 @@ func die(reason: String = "You were caught!"):
 
 
 func win():
+	characterBody.hide()
 	characterBody.find_child("WinLayer").find_child("WinScreen").win()
