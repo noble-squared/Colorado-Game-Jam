@@ -36,24 +36,16 @@ scale = Vector2(1.82, 1.82)
 script = ExtResource("1_kheec")
 
 [node name="DayLayer" type="TileMapLayer" parent="." unique_id=412382431]
-visible = false
 position = Vector2(-6.4373016e-06, -4.7683713e-07)
 scale = Vector2(0.99999994, 0.99999994)
-tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 2, 0, 0, 0, 0, 0, 0, 16)
-enabled = false
 tile_set = SubResource("TileSet_mlqre")
 
 [node name="NightLayer" type="TileMapLayer" parent="." unique_id=1099817172]
-visible = false
 position = Vector2(-6.4373016e-06, -4.7683713e-07)
 scale = Vector2(0.99999994, 0.99999994)
-tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 1, 0, 0, 0, 0, 16, 0, 0, 255, 255, 2, 0, 1, 0, 0, 0, 0, 0)
-enabled = false
 tile_set = SubResource("TileSet_mlqre")
 
 [node name="DisabledLayer" type="TileMapLayer" parent="." unique_id=537860606]
-visible = false
 position = Vector2(-6.4373016e-06, -4.7683713e-07)
 scale = Vector2(0.99999994, 0.99999994)
-tile_map_data = PackedByteArray(0, 0, 255, 255, 255, 255, 2, 0, 2, 0, 1, 0, 0, 16, 0, 0, 255, 255, 2, 0, 2, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_mlqre")
