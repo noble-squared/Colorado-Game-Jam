@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dclv64v3ycq8s"]
+
+[ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="1_6fyw5"]
+[ext_resource type="Script" uid="uid://faekdnqb3c6v" path="res://Scripts/museum_cover.gd" id="2_c1775"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h4fw4"]
+texture = ExtResource("1_6fyw5")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:4/size_in_atlas = Vector2i(3, 3)
+1:4/0 = 0
+4:4/size_in_atlas = Vector2i(3, 3)
+4:4/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ldgsr"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_h4fw4")
+
+[node name="MuseumCover" type="TileMapLayer" unique_id=922705171]
+tile_set = SubResource("TileSet_ldgsr")
+script = ExtResource("2_c1775")

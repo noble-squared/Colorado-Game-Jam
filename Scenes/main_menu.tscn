@@ -4,9 +4,8 @@
 [ext_resource type="Theme" uid="uid://c0s2fsegqevro" path="res://assets/themes/game_over_theme.tres" id="1_opfnp"]
 [ext_resource type="PackedScene" uid="uid://dadso51vpxcwh" path="res://Scenes/buttons/level_select_button.tscn" id="2_1ehe0"]
 [ext_resource type="Texture2D" uid="uid://blxmxd040i82o" path="res://assets/art/Title-frame0.png" id="2_ce3w2"]
-[ext_resource type="PackedScene" uid="uid://dv07s1xjqy0p7" path="res://Scenes/CloudBackdrop.tscn" id="2_n45e2"]
 [ext_resource type="PackedScene" uid="uid://c2qh6v3t7l755" path="res://Scenes/buttons/quit_button.tscn" id="3_ce3w2"]
-[ext_resource type="PackedScene" uid="uid://cp0id6bncmy0u" path="res://Scenes/CloudBackdrop.tscn" id="5_n45e2"]
+[ext_resource type="PackedScene" uid="uid://dv07s1xjqy0p7" path="res://Scenes/CloudBackdrop.tscn" id="5_n45e2"]
 
 [node name="MainMenu" type="Control" unique_id=223779711]
 process_mode = 3
@@ -29,7 +28,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.32156864, 0.6901961, 0.9254902, 1)
 
-[node name="CloudBackdrop" parent="." unique_id=47429626 instance=ExtResource("2_n45e2")]
+[node name="CloudBackdrop" parent="." unique_id=47429626 instance=ExtResource("5_n45e2")]
 position = Vector2(13, 670)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2020027676]
@@ -66,7 +65,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Level 1"
-level = "level_1"
+level = "tutorial2"
 
 [node name="Level2SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1806768087 instance=ExtResource("2_1ehe0")]
 layout_mode = 2
@@ -88,5 +87,5 @@ text = "Level 4"
 [node name="QuitButton" parent="VBoxContainer" unique_id=435335843 instance=ExtResource("3_ce3w2")]
 layout_mode = 2
 
-[node name="CloudBackdrop" parent="." unique_id=47429626 instance=ExtResource("5_n45e2")]
+[node name="CloudBackdrop2" parent="." unique_id=1789607381 instance=ExtResource("5_n45e2")]
 position = Vector2(271, 474)
