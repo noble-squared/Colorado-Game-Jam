@@ -39,6 +39,8 @@ var swappingDisabled: bool = false
 signal NightSwapped
 signal DaySwapped
 
+signal KeyHitDoor
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if (debugMode):
