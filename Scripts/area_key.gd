@@ -19,8 +19,8 @@ func _on_day_swapped():
 	KeySprite.frame = 0
 	if player:
 		self.position = player.position
-		self.visible = true
 		player = null
+	self.visible = true
 	Collision.set_deferred("disabled", true)
 	#self.monitoring = false
 

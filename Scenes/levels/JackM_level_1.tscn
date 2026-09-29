@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_woo7q"]
 [ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="2_adum2"]
-[ext_resource type="PackedScene" uid="uid://b5kdyywl34hq8" path="res://Scenes/CityBackdrop.tscn" id="3_4c1wq"]
+[ext_resource type="PackedScene" uid="uid://bb2d82sv6levq" path="res://Scenes/CityBackdrop.tscn" id="3_4c1wq"]
 [ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_ch732"]
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_4c1wq"]
 [ext_resource type="PackedScene" uid="uid://dclv64v3ycq8s" path="res://Scenes/museum_cover.tscn" id="4_253b1"]
@@ -96,6 +96,9 @@ position = Vector2(-664, 20)
 position = Vector2(-804.99994, 7)
 scale = Vector2(0.8, 0.8)
 
+[node name="areaKey" parent="." unique_id=153966361 instance=ExtResource("8_ec1r3")]
+position = Vector2(-450, -494)
+
 [node name="Platforms" type="Node" parent="." unique_id=1027847893]
 
 [node name="DayPlatforms" parent="Platforms" unique_id=1274608817 instance=ExtResource("7_mvss5")]
@@ -106,9 +109,6 @@ tile_map_data = PackedByteArray("AAAMAP7/AgAAAAAAACANAP7/AgAAAAAAADASAPX/AgACAAA
 
 [node name="DisabledLayer" parent="Platforms/DayPlatforms" index="2" unique_id=537860606]
 tile_map_data = PackedByteArray("AAAMAP7/AgACAAEAADANAP7/AgACAAEAACAYAPf/AgACAAEAADAZAPf/AgACAAEAACASAPn/AgACAAEAAFASAPb/AgADAAEAAFASAPf/AgADAAEAAFASAPj/AgADAAEAAFASAPL/AgACAAEAAHASAPP/AgADAAEAAFASAPT/AgADAAEAAFASAPX/AgADAAEAAFDm//X/AgACAAEAAADy//f/AgACAAEAAAD3//z/AgACAAEAAADk//X/AgACAAEAABDx//f/AgACAAEAABD1//z/AgACAAEAABD2//z/AgADAAEAAADl//X/AgADAAEAAAA=")
-
-[node name="areaKey" parent="Platforms/DayPlatforms" unique_id=153966361 instance=ExtResource("8_ec1r3")]
-position = Vector2(-247.80219, -278.57135)
 
 [node name="NightPlatforms" parent="Platforms" unique_id=915787832 instance=ExtResource("7_mvss5")]
 
