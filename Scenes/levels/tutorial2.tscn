@@ -1,8 +1,8 @@
-[gd_scene format=4 uid="uid://cyyjkuankb6b1"]
+[gd_scene format=4 uid="uid://blply2pbvut4j"]
 
 [ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_ebmjs"]
 [ext_resource type="PackedScene" uid="uid://x6bo71sn0vlp" path="res://Scenes/platform.tscn" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://bb2d82sv6levq" path="res://Scenes/CityBackdrop.tscn" id="2_ttkmv"]
+[ext_resource type="PackedScene" uid="uid://b5kdyywl34hq8" path="res://Scenes/CityBackdrop.tscn" id="2_ttkmv"]
 [ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="2_v158k"]
 [ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_3dryh"]
@@ -51,7 +51,7 @@ normal = Vector2(1, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dv84f"]
 size = Vector2(14.3125, 28)
 
-[node name="Game" type="Node2D" unique_id=1873807053]
+[node name="Game2" type="Node2D" unique_id=1873807053]
 script = ExtResource("1_ebmjs")
 
 [node name="CityBackdrop" parent="." unique_id=1438811968 instance=ExtResource("2_ttkmv")]
