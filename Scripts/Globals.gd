@@ -1,8 +1,8 @@
 extends Node
 
 var levels = [
+	"res://Scenes/levels/level_1.tscn",
 	"res://Scenes/levels/tutorial2.tscn",
-	#"res://Scenes/levels/level_1.tscn",
 	"res://Scenes/levels/JackM_level_1.tscn",
 	"res://Scenes/levels/level_hayden_1.tscn",
 ]
@@ -52,7 +52,7 @@ func _ready() -> void:
 	for sound in sounds.keys():
 		var player = AudioStreamPlayer.new()
 		print("Loading sound: " + sound)
-		player.stream = AudioStreamMP3.load_from_file(sounds[sound][0])
+		player.stream = load(sounds[sound][0])
 		player.volume_db = sounds[sound][1]
 		add_child(player)
 		player.max_polyphony = 5
@@ -62,7 +62,7 @@ func _ready() -> void:
 	for song in music.keys():
 		var player = AudioStreamPlayer.new()
 		print("Loading sound: " + song)
-		player.stream = AudioStreamMP3.load_from_file(music[song][0])
+		player.stream = load(music[song][0])
 		player.volume_db = music[song][1]
 		add_child(player)
 		loadedMusic[song] = player
