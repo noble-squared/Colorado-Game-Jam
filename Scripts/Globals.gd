@@ -9,10 +9,12 @@ var levels = [
 var current_level = 0
 var highestUnlockedLevel = 0
 
+# Resource path, then decibels
 var sounds: Dictionary[String, Array] = {
 	"lose": ["res://assets/sounds/prison-cell-door.mp3", 0],
 	"rewind": ["res://assets/sounds/tape-rewind.mp3", 0],
-	"win": ["res://assets/sounds/truck-engine-start.mp3", -4]
+	"win": ["res://assets/sounds/truck-engine-start.mp3", -4],
+	"jump": ["res://assets/sounds/grunt_2_processed.mp3", 0]
 }
 
 var loadedSounds: Dictionary[String, AudioStreamPlayer2D] = {}

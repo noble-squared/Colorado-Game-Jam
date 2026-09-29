@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dv07s1xjqy0p7"]
+[gd_scene format=3 uid="uid://cp0id6bncmy0u"]
 
-[ext_resource type="Script" uid="uid://cjfldlaw0gul4" path="res://Scenes/cloud_backdrop.gd" id="1_aoqta"]
+[ext_resource type="Script" path="res://Scenes/cloud_backdrop.gd" id="1_aoqta"]
 [ext_resource type="Texture2D" uid="uid://e250ucu61kkl" path="res://assets/art/Sprite Sheets/CloudSheet.png" id="1_w7xwb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aoqta"]

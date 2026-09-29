@@ -46,6 +46,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			applyNormalGravity(delta)
 		if (Input.is_action_just_pressed("Jump") && sign(horizontalDelta) != 0):
+			Globals.playSound("jump")
 			characterBody.velocity.y = -wallJumpImpulse.y
 			characterBody.velocity.x -= wallJumpImpulse.x * sign(horizontalDelta)
 			if (sign(horizontalDelta)):
@@ -56,6 +57,7 @@ func _physics_process(delta: float) -> void:
 		timeWallRiding = 0
 		applyNormalGravity(delta)
 		if (Input.is_action_just_pressed("Jump") && jumpsInARow < maxJumpsInARow): # Jumping
+			Globals.playSound("jump")
 			characterBody.velocity.y = -jumpImpulse
 			jumpsInARow += 1
 			print(jumpsInARow)
