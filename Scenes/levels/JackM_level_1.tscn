@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://plxnceo48jyh" path="res://Scripts/game.gd" id="1_woo7q"]
 [ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="2_adum2"]
-[ext_resource type="PackedScene" uid="uid://bb2d82sv6levq" path="res://Scenes/CityBackdrop.tscn" id="3_4c1wq"]
+[ext_resource type="PackedScene" uid="uid://b5kdyywl34hq8" path="res://Scenes/CityBackdrop.tscn" id="3_4c1wq"]
 [ext_resource type="PackedScene" uid="uid://dm4ghbmkfq828" path="res://Scenes/player.tscn" id="3_ch732"]
 [ext_resource type="PackedScene" uid="uid://ck765sbran6xt" path="res://Scenes/loot.tscn" id="4_4c1wq"]
 [ext_resource type="PackedScene" uid="uid://dol0a51giqtfq" path="res://Scenes/getaway_truck.tscn" id="5_253b1"]
@@ -61,7 +61,7 @@ _data = {
 }
 point_count = 5
 
-[node name="Game2" type="Node2D" unique_id=333900588]
+[node name="Game3" type="Node2D" unique_id=333900588]
 script = ExtResource("1_woo7q")
 
 [node name="CityBackdrop" parent="." unique_id=1438811968 instance=ExtResource("3_4c1wq")]
@@ -145,3 +145,20 @@ type = 1
 
 [node name="Loot2" parent="." unique_id=775132210 instance=ExtResource("4_4c1wq")]
 position = Vector2(904, -343)
+
+[node name="Label" type="Label" parent="." unique_id=1825304141]
+offset_left = 198.0
+offset_top = -67.0
+offset_right = 575.0
+offset_bottom = -38.0
+theme_override_font_sizes/font_size = 9
+text = "Don't run into the guard 
+when you have the loot!"
+
+[node name="Label2" type="Label" parent="." unique_id=1670203131]
+offset_left = 454.0
+offset_top = -175.0
+offset_right = 831.0
+offset_bottom = -146.0
+theme_override_font_sizes/font_size = 9
+text = "Don't stand in the spotlights!"
