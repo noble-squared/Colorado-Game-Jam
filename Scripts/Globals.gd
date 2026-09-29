@@ -34,6 +34,7 @@ enum States {NIGHT, DAY}
 var current_state
 var times_swapped: int = 0
 var clickSFX: AudioStreamPlayer2D
+var swappingDisabled: bool = false
 
 signal NightSwapped
 signal DaySwapped
@@ -67,7 +68,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("SwapTime"):
+	if Input.is_action_just_pressed("SwapTime") and not swappingDisabled:
 		swapState()
 
 func next_level():
