@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://lf4svsgii5f7"]
+
+[ext_resource type="Script" uid="uid://dtnvpnmmakcvn" path="res://Scripts/tutorial_text.gd" id="1_gcbbf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dv84f"]
+size = Vector2(14.3125, 28)
+
+[node name="TutorialText" type="Node" unique_id=515050068]
+script = ExtResource("1_gcbbf")
+
+[node name="TutorialText" type="Label" parent="." unique_id=1539030575]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 12
+text = "Debug Text"
+
+[node name="OpenText" type="Area2D" parent="." unique_id=1978996560]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpenText" unique_id=253709031]
+position = Vector2(16, 0.5)
+shape = SubResource("RectangleShape2D_dv84f")
+
+[connection signal="body_entered" from="OpenText" to="." method="_on_open_text_body_entered"]

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cku22cyua6fba"]
+
+[ext_resource type="Script" uid="uid://b5vyl77avjmco" path="res://Scripts/door.gd" id="1_p0e35"]
+[ext_resource type="Texture2D" uid="uid://b8a8ouyy1tkum" path="res://assets/art/Sprite Sheets/ColoradoGameJamEnvironmentTileSet.png" id="1_w6aom"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_p0e35"]
+texture = ExtResource("1_w6aom")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+5:6/0 = 0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 8, -8, 8, 8, -4, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -8, 8, -8, 8, 8, -4, 8)
+
+[sub_resource type="TileSet" id="TileSet_fahql"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 3
+sources/0 = SubResource("TileSetAtlasSource_p0e35")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6aom"]
+size = Vector2(15, 32)
+
+[node name="Door" type="Area2D" unique_id=720449336]
+scale = Vector2(2, 2)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_p0e35")
+
+[node name="Door" type="TileMapLayer" parent="." unique_id=262239071]
+position = Vector2(-7.5, 0.5)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0)
+tile_set = SubResource("TileSet_fahql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=808883084]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_w6aom")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

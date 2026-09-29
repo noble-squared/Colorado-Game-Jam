@@ -15,6 +15,7 @@ func _ready() -> void:
 	print(type)
 	Globals.connect("DaySwapped", _on_day_swapped)
 	Globals.connect("NightSwapped", _on_night_swapped)
+	disableLayers()
 	_on_day_swapped()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,3 +43,9 @@ func _on_night_swapped():
 		night_layer.visible = true
 		night_layer.enabled = true
 		disabled_layer.visible = false
+
+func disableLayers():
+	night_layer.enabled = false
+	night_layer.visible = false
+	day_layer.enabled = false
+	day_layer.visible = false

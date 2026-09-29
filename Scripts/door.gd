@@ -1,11 +1,8 @@
-extends Control
+extends Area2D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Globals.swappingDisabled = true
-	Globals.loadGame()
-	Globals.playMusic("main")
 	pass # Replace with function body.
 
 
@@ -14,5 +11,11 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_credits_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/credits_screen.tscn")
+func _on_body_entered(body: Node2D) -> void:
+	#if body.isKey != null:
+		##print("key hit door")
+		#Globals.KeyHitDoor.emit()
+		#self.queue_free()
+	if body.hasKey == true:
+		Globals.KeyHitDoor.emit()
+		self.queue_free()

@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite_2d.flip_h = (sign(characterBody.get_wall_normal().x) < 0)
 		if (characterBody.velocity.y < 0): characterBody.velocity.y = 0
 		if (timeWallRiding < maxTimeWallRiding):
-			#jumpsInARow = 0
+			jumpsInARow = 1
 			timeWallRiding += delta
 			characterBody.velocity = characterBody.get_gravity() * delta * wallSlideVerticalCurbCurve.sample(timeWallRiding / maxTimeWallRiding)
 		else:
@@ -60,7 +60,7 @@ func _physics_process(delta: float) -> void:
 			Globals.playSound("jump")
 			characterBody.velocity.y = -jumpImpulse
 			jumpsInARow += 1
-			print(jumpsInARow)
+			#print(jumpsInARow)
 		elif (characterBody.is_on_floor()):
 			jumpsInARow = 0
 	

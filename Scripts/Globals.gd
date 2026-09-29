@@ -2,6 +2,7 @@ extends Node
 
 var levels = [
 	"res://Scenes/levels/level_1.tscn",
+	"res://Scenes/levels/tutorial2.tscn",
 	"res://Scenes/levels/JackM_level_1.tscn",
 	"res://Scenes/levels/level_hayden_1.tscn",
 ]
@@ -14,7 +15,8 @@ var sounds: Dictionary[String, Array] = {
 	"lose": ["res://assets/sounds/prison-cell-door.mp3", 0],
 	"rewind": ["res://assets/sounds/tape-rewind.mp3", 0],
 	"win": ["res://assets/sounds/truck-engine-start.mp3", -4],
-	"jump": ["res://assets/sounds/grunt_2_processed.mp3", 0]
+	"jump": ["res://assets/sounds/grunt_2_processed.mp3", 0],
+	"pickup": ["res://assets/sounds/rolling-bag-out-processed.mp3", 0]
 }
 
 var loadedSounds: Dictionary[String, AudioStreamPlayer] = {}
@@ -39,6 +41,8 @@ var swappingDisabled: bool = false
 signal NightSwapped
 signal DaySwapped
 
+signal KeyHitDoor
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if (debugMode):
@@ -48,16 +52,17 @@ func _ready() -> void:
 	for sound in sounds.keys():
 		var player = AudioStreamPlayer.new()
 		print("Loading sound: " + sound)
-		player.stream = AudioStreamMP3.load_from_file(sounds[sound][0])
+		player.stream = load(sounds[sound][0])
 		player.volume_db = sounds[sound][1]
 		add_child(player)
+		player.max_polyphony = 5
 		player.process_mode = Node.PROCESS_MODE_ALWAYS
 		loadedSounds[sound] = player
 	
 	for song in music.keys():
 		var player = AudioStreamPlayer.new()
 		print("Loading sound: " + song)
-		player.stream = AudioStreamMP3.load_from_file(music[song][0])
+		player.stream = load(music[song][0])
 		player.volume_db = music[song][1]
 		add_child(player)
 		loadedMusic[song] = player

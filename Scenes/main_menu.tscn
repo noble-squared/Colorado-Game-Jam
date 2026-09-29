@@ -58,7 +58,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_stretch_ratio = 3.84
 theme_override_constants/v_separation = 4
-columns = 3
+columns = 4
 
 [node name="Level1SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1272142489 instance=ExtResource("2_1ehe0")]
 layout_mode = 2
@@ -67,25 +67,32 @@ size_flags_vertical = 3
 text = "Level 1"
 level = "level_1"
 
-[node name="Level2SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1806768087 instance=ExtResource("2_1ehe0")]
+[node name="Level2SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=714221603 instance=ExtResource("2_1ehe0")]
 layout_mode = 2
 text = "Level 2"
-level = "JackM_level_1"
+level = "tutorial2"
 levelIndex = 1
 
-[node name="Level3SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=2096887483 instance=ExtResource("2_1ehe0")]
+[node name="Level3SelectButton2" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=1806768087 instance=ExtResource("2_1ehe0")]
 layout_mode = 2
 text = "Level 3"
-level = "level_hayden_1"
+level = "JackM_level_1"
 levelIndex = 2
 
-[node name="Level4SelectButton" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=714221603 instance=ExtResource("2_1ehe0")]
-visible = false
+[node name="Level4SelectButton2" parent="VBoxContainer/CenterContainer/GridContainer" unique_id=2096887483 instance=ExtResource("2_1ehe0")]
 layout_mode = 2
 text = "Level 4"
+level = "level_hayden_1"
+levelIndex = 3
+
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=20860532]
+layout_mode = 2
+text = "Credits"
 
 [node name="QuitButton" parent="VBoxContainer" unique_id=435335843 instance=ExtResource("3_ce3w2")]
 layout_mode = 2
 
-[node name="CloudBackdrop2" parent="." unique_id=20149839 instance=ExtResource("5_n45e2")]
+[node name="CloudBackdrop2" parent="." unique_id=1789607381 instance=ExtResource("5_n45e2")]
 position = Vector2(271, 474)
+
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
