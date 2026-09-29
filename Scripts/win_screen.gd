@@ -6,6 +6,7 @@ func _ready() -> void:
 func win():
 	visible = true
 	Globals.playSound("win")
+	Globals.swappingDisabled = true
 	if (Globals.highestUnlockedLevel == Globals.current_level):
 		Globals.highestUnlockedLevel += 1
 		Globals.saveGame()
