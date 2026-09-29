@@ -2,6 +2,7 @@ extends Node
 
 var levels = [
 	"res://Scenes/levels/level_1.tscn",
+	"res://Scenes/levels/tutorial2.tscn",
 	"res://Scenes/levels/JackM_level_1.tscn",
 	"res://Scenes/levels/level_hayden_1.tscn",
 ]
