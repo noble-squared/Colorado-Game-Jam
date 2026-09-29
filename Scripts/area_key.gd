@@ -34,6 +34,7 @@ func _on_body_entered(body: Node) -> void:
 	if body.hasKey != null:
 		player = body
 		player.pickUpKey()
+		Globals.playSound("pickup")
 		self.visible = false
 		Collision.set_deferred("disabled", true)
 

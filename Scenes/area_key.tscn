@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bxywqca07s0vr"]
+[gd_scene format=3 uid="uid://s2wex5y03p02"]
 
 [ext_resource type="Texture2D" uid="uid://b6w258bk20do5" path="res://assets/art/object_tiles.png" id="1_iar5u"]
 [ext_resource type="Script" uid="uid://b8t5pkw1otnh5" path="res://Scripts/area_key.gd" id="1_kkfcf"]

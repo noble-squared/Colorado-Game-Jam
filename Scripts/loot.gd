@@ -28,6 +28,8 @@ func _on_body_entered(body: Node2D) -> void:
 			print(sprite_frame)
 			reparent.call_deferred(body)
 			set_deferred("position",Vector2(0,-25))
+			
+			Globals.playSound("pickup")
 			#animated_sprite_2d.play("bag") # TBD See if we want to keep
 			collision_shape_2d.set_deferred("disabled",true)
 		

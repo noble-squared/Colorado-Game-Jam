@@ -9,6 +9,7 @@ func _ready() -> void:
 func gameOver(reason: String = "You were caught!") -> void:
 	visible = true
 	Globals.playSound("lose", 0.72)
+	Globals.swappingDisabled = true
 	$VBoxContainer/Label.text = reason
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", Vector2(0, 0), 1.0)

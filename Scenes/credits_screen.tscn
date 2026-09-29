@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://dxy84upnqfoxm"]
+
+[ext_resource type="Theme" uid="uid://c0s2fsegqevro" path="res://assets/themes/game_over_theme.tres" id="1_kwkrj"]
+[ext_resource type="PackedScene" uid="uid://cp0id6bncmy0u" path="res://Scenes/CloudBackdrop.tscn" id="2_amjhk"]
+[ext_resource type="Script" uid="uid://b7arktypdquc4" path="res://Scenes/credits_screen.gd" id="2_u8vtk"]
+[ext_resource type="PackedScene" uid="uid://b5vw30libii87" path="res://Scenes/buttons/main_menu_button.tscn" id="3_u8vtk"]
+
+[node name="creditsScreen" type="Control" unique_id=958286387]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kwkrj")
+script = ExtResource("2_u8vtk")
+
+[node name="Panel" type="ColorRect" parent="." unique_id=275837774]
+z_index = -10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.32156864, 0.6901961, 0.9254902, 1)
+
+[node name="CloudBackdrop" parent="." unique_id=47429626 instance=ExtResource("2_amjhk")]
+position = Vector2(13, 670)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=504080279]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_right = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5803922)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=434822187]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 360.0
+offset_bottom = 1683.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1396035705]
+layout_mode = 2
+
+[node name="ProgrammersLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=719744965]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Programmers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Adara" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1328885099]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Adara Noble"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hayden" type="Label" parent="CenterContainer/VBoxContainer" unique_id=893906691]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Hayden Sandau"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JackM" type="Label" parent="CenterContainer/VBoxContainer" unique_id=93474792]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Jack McDonald"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ArtistsLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=469763212]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Artists"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Adara2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1767123407]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Adara Noble"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JackM2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1418619154]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Jack McDonald"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JackS" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1133475060]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Jack Santucci"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1449710593]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Music Composer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JackS2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=781470687]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Jack Santucci"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=742899134]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sound Designer"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hayden2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1124858694]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Hayden Sandau"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundLabel2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=12718751]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Sounds from"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="freesound" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1062996489]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "freesound.org users
+EdgardEdition
+endritprenku
+Eyewer
+Fission9
+kyles
+LukaCafuka"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DesignersLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1060872334]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Designers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Adara3" type="Label" parent="CenterContainer/VBoxContainer" unique_id=670804326]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Adara Noble"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hayden3" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1204702450]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Hayden Sandau"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JackM3" type="Label" parent="CenterContainer/VBoxContainer" unique_id=511598282]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Jack McDonald"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="JackS3" type="Label" parent="CenterContainer/VBoxContainer" unique_id=826122095]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Jack Santucci"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EngineLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1780217269]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Made using
+Godot Engine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EngineLabel2" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1939823346]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Thank you
+for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=537602029]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 22.0
+offset_right = 77.0
+offset_bottom = 45.0
+text = "Credits"
+
+[node name="MainMenuButton" parent="." unique_id=2134114912 instance=ExtResource("3_u8vtk")]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 78.0
+offset_right = 181.0
+offset_bottom = 117.0
+
+[node name="FadeToBlack" type="ColorRect" parent="." unique_id=992808206]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
