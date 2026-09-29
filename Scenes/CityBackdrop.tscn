@@ -1,0 +1,33 @@
+[gd_scene format=4 uid="uid://bb2d82sv6levq"]
+
+[ext_resource type="Texture2D" uid="uid://u3e7ercfib6i" path="res://assets/art/Sprite Sheets/City.png" id="1_3rfro"]
+[ext_resource type="PackedScene" uid="uid://devv5sj3bpqso" path="res://Scenes/background.tscn" id="2_jb88n"]
+[ext_resource type="PackedScene" path="res://Scenes/CloudBackdrop.tscn" id="3_uib18"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jb88n"]
+texture = ExtResource("1_3rfro")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_uib18"]
+sources/0 = SubResource("TileSetAtlasSource_jb88n")
+
+[node name="CityBackdrop" type="Node2D" unique_id=1438811968]
+z_index = -8
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=2020499978]
+scroll_scale = Vector2(0.5, 0.5)
+scroll_offset = Vector2(0, 235)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Parallax2D" unique_id=1516647386]
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AAAAAPz/AAAAAAAAAAAIAPz/AAAAAAAAAAD4//z/AAAAAAAAAAAQAPz/AAAAAAAAAADw//z/AAAAAAAAAAAYAPz/AAAAAAAAAADo//z/AAAAAAAAAAAgAPz/AAAAAAAAAAAoAPz/AAAAAAAAAAAwAPz/AAAAAAAAAAA4APz/AAAAAAAAAABAAPz/AAAAAAAAAADg//z/AAAAAAAAAADY//z/AAAAAAAAAADQ//z/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_uib18")
+
+[node name="Background" parent="Parallax2D" unique_id=288593620 instance=ExtResource("2_jb88n")]
+modulate = Color(1, 1, 1, 0.2901961)
+self_modulate = Color(1, 1, 1, 0.039215688)
+z_index = 0
+
+[node name="CloudBackdrop" parent="Parallax2D" unique_id=47429626 instance=ExtResource("3_uib18")]
+position = Vector2(-550, -211)

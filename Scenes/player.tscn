@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dt5u0rcl15igd" path="res://Scenes/playerUI/win_screen.tscn" id="9_gymyn"]
 [ext_resource type="Texture2D" uid="uid://bpu48iefgfkn" path="res://assets/art/Sprite Sheets/sunandmood-Sheet.png" id="10_pu2lt"]
 [ext_resource type="Texture2D" uid="uid://p8alxb2ikaii" path="res://assets/art/Sprite Sheets/sunbutton-Sheet.png" id="11_ukyrk"]
+[ext_resource type="AudioStream" uid="uid://dlctc411voer4" path="res://assets/sounds/footsteps-stone.mp3" id="13_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://b6w258bk20do5" path="res://assets/art/object_tiles.png" id="13_ukyrk"]
 
 [sub_resource type="Curve" id="Curve_6t5aa"]
@@ -161,7 +162,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Wall Slide",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -387,8 +388,7 @@ zoom = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_pu2lt")
 animation = &"Wall Slide"
 autoplay = "default"
-frame = 4
-frame_progress = 0.85994726
+frame_progress = 0.9292582
 offset = Vector2(4, 0)
 
 [node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=541839562]
@@ -412,6 +412,14 @@ sprite_frames = SubResource("SpriteFrames_wpjfl")
 position = Vector2(-207.5, 87.5)
 sprite_frames = SubResource("SpriteFrames_sbwqj")
 animation = &"NightSwap"
+
+[node name="AudioPlayers" type="Node2D" parent="." unique_id=904694725]
+
+[node name="FootstepPlayer1" type="AudioStreamPlayer2D" parent="AudioPlayers" unique_id=656877749]
+scale = Vector2(0.99999994, 0.99999994)
+stream = ExtResource("13_ukyrk")
+volume_db = -5.0
+pitch_scale = 1.5
 
 [node name="MiniKey" type="AnimatedSprite2D" parent="." unique_id=765955817]
 visible = false

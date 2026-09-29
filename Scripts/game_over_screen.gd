@@ -8,6 +8,7 @@ func _ready() -> void:
 
 func gameOver(reason: String = "You were caught!") -> void:
 	visible = true
+	Globals.playSound("lose", 0.72)
 	$VBoxContainer/Label.text = reason
 	var tween = get_tree().create_tween()
 	tween.tween_property(self, "position", Vector2(0, 0), 1.0)
@@ -17,6 +18,7 @@ func gameOver(reason: String = "You were caught!") -> void:
 	get_tree().paused = true
 
 func _on_restart_button_pressed() -> void:
+	Globals.playClickSFX()
 	Globals.setDayNight(Globals.States.DAY)
 	get_tree().paused = false
 	get_tree().reload_current_scene()
