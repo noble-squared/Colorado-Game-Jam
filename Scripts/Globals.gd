@@ -54,6 +54,7 @@ func _ready() -> void:
 		player.stream = AudioStreamMP3.load_from_file(sounds[sound][0])
 		player.volume_db = sounds[sound][1]
 		add_child(player)
+		player.max_polyphony = 5
 		player.process_mode = Node.PROCESS_MODE_ALWAYS
 		loadedSounds[sound] = player
 	
