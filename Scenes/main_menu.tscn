@@ -85,8 +85,14 @@ text = "Level 4"
 level = "level_hayden_1"
 levelIndex = 3
 
+[node name="CreditsButton" type="Button" parent="VBoxContainer" unique_id=20860532]
+layout_mode = 2
+text = "Credits"
+
 [node name="QuitButton" parent="VBoxContainer" unique_id=435335843 instance=ExtResource("3_ce3w2")]
 layout_mode = 2
 
 [node name="CloudBackdrop2" parent="." unique_id=20149839 instance=ExtResource("5_n45e2")]
 position = Vector2(271, 474)
+
+[connection signal="pressed" from="VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
